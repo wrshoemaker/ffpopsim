@@ -229,6 +229,21 @@ public:
 };
 
 
+/*
+Subclass for hopping depending not only on the mutation rates,
+but also on the fitness difference between start and end points.
+*/
+class haploid_pop_hop : public haploid_gt_dis
+{
+public:
+	haploid_pop_hop();
+	~haploid_pop_hop();
+	haploid_pop_hop(int nloci, double popsize, int rngseed=0);
+
+	int set_hopping_rate(double h);
+};
+
+
 #define HC_MEMERR -131545
 #define HC_BADARG -131546
 #define HC_VERBOSE 0
