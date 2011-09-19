@@ -1,4 +1,4 @@
-CFLAGS= -O2 -c -g
+CFLAGS= -O2 -c -g -fPIC
 
 
 PopGenLib:	haploid_gt_dis.o    haploid_population.o hypercube_function.o hypercube.o sample.o
@@ -19,3 +19,6 @@ hypercube_function.o: popgen.h hypercube_function.cpp
 
 hypercube.o: popgen.h hypercube.cpp
 	g++ ${CFLAGS} hypercube.cpp
+
+clean:
+	rm -rf *.o libPopGenLib.a

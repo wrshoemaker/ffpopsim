@@ -1,0 +1,46 @@
+# date:		17/09/2011
+# authors:	F. Zanini, R. Neher
+# content:	GIT ignores these globbing expressions
+
+#---------------------------
+# C++
+#---------------------------
+# Compiled Object files
+*.slo
+*.lo
+*.o
+
+# Compiled Dynamic libraries
+*.so
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+
+# VIM temporary files
+.*.sw[a-z]
+*.un~
+Session.vim
+
+#---------------------------
+# OSX specific
+#---------------------------
+.DS_Store
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+#---------------------------
+# Linux specific
+#---------------------------
+.*
+!.gitignore
+*~
+
+# KDE
+.directory

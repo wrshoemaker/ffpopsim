@@ -2,7 +2,7 @@
  * popgen.h
  *
  *  Created on: Oct 27, 2010
- *      Author: richard
+ *  Author: richard
  */
 
 #ifndef POPGEN_H_
