@@ -18,6 +18,7 @@
 *.la
 *.a
 
+
 # VIM temporary files
 .*.sw[a-z]
 *.un~

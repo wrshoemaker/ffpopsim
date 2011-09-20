@@ -248,6 +248,7 @@ public:
 	int setup(int nloci, double popsize, int rngseed=0);
 
 	int set_hopping_rate(double h);
+	int set_hopping_rate(double* h);
 	int set_hopping_rate(double** h);
 	int hop();
 };

@@ -105,6 +105,27 @@ int haploid_pop_hop::set_hopping_rate(double** h) {
 }
 
 
+int haploid_pop_hop::set_hopping_rate(double* h) {
+/*
+ * Genotype- and neighbour specific hopping rate. This works as for the matrix signature,
+ * but the matrix is assumed to have been flattened. This means that:
+ * - the first number_of_loci entries refer to the first genotype (in matrix notation, hoprates[0][:])
+ * - then come the hopping rates for the second genotype, etc.
+*/
+ if (!mem){
+  cerr<<"haploid_pop_hop::set_hopping_rate(): allocate memory first!\n";
+  return HG_MEMERR;
+ }
+ // No dimensional check on h... please BE CAREFUL!
+ for (int gt=0; gt < (1<<number_of_loci); gt++){
+  for (int locus=0; locus<number_of_loci; locus++){
+   hopping_rates[gt][locus] = h[gt * number_of_loci + locus];
+  }
+ }
+ return 0;
+}
+
+
 int haploid_pop_hop::hop() {
  // I can recycle the mutants attribute for my goals, since a pop does not mutate and hop at the same time
  mutants.set_state(HC_FUNC);
