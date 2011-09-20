@@ -220,12 +220,11 @@ int haploid_gt_dis::resample(double n)
  */
 int haploid_gt_dis::mutate()
 {
-	int locus;
 	mutants.set_state(HC_FUNC);
 	population.set_state(HC_FUNC);
 	for (int i=0; i<(1<<number_of_loci); i++){
 		mutants.func[i]=0;
-		for (locus=0; locus<number_of_loci; locus++)
+		for (int locus=0; locus<number_of_loci; locus++)
 		{
 			if (i&(1<<locus)){
 				mutants.func[i]+=mutation_rates[0][locus]*population.func[i-(1<<locus)]-mutation_rates[1][locus]*population.func[i];
@@ -234,6 +233,7 @@ int haploid_gt_dis::mutate()
 			}
 		}
 	}
+ 	// Set the population to the mutants
 	for (int i=0; i<(1<<number_of_loci); i++){
 		population.func[i]+=mutants.func[i];
 		//cout <<mutation_rate<<"  "<<mutants.func[i]<<"  "<<population.func[i]<<endl;

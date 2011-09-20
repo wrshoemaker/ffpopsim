@@ -153,6 +153,7 @@ public:
 
 class haploid_gt_dis
 {
+ protected:
 	//hypercubes that store the distribution of recombinations and the change in the
 	//population distribution due to muations
 	hypercube recombinants;
@@ -173,8 +174,8 @@ class haploid_gt_dis
 	gsl_rng* rng;	//uses the same RNG as defined in hypercube.h from the  GSL library.
 	int seed;	//seed of the rng
 
-	int allocate_mem();
-	int free_mem();
+	virtual int allocate_mem();
+	virtual int free_mem();
 	bool mem;
 	const static double haploidversion=0.61;
 public:
@@ -184,7 +185,7 @@ public:
 	haploid_gt_dis();
 	~haploid_gt_dis();
 	haploid_gt_dis(int nloci, double popsize, int rngseed=0);
-	int setup(int nloci, double popsize, int rngseed=0);
+	virtual int setup(int nloci, double popsize, int rngseed=0);
 	double version(){return haploidversion;}
 
 	//initialization
@@ -235,12 +236,19 @@ but also on the fitness difference between start and end points.
 */
 class haploid_pop_hop : public haploid_gt_dis
 {
+	int allocate_mem();
+	int free_mem();
+	// hopping rate could be made edge and direction-specific,
+	// but is local. Thus we need 2^L*L rates.
+	double** hopping_rates;
 public:
 	haploid_pop_hop();
 	~haploid_pop_hop();
 	haploid_pop_hop(int nloci, double popsize, int rngseed=0);
+	int setup(int nloci, double popsize, int rngseed=0);
 
 	int set_hopping_rate(double h);
+	int hop();
 };
 
 
