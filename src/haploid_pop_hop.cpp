@@ -6,17 +6,16 @@
  */
 #include "popgen.h"
 
+
 haploid_pop_hop::haploid_pop_hop() : haploid_gt_dis() {}
 
 
-haploid_pop_hop::~haploid_pop_hop()
-{
+haploid_pop_hop::~haploid_pop_hop() {
  free_mem();
 }
 
 
-haploid_pop_hop::haploid_pop_hop(int nloci, double popsize, int rngseed)
-{
+haploid_pop_hop::haploid_pop_hop(int nloci, double popsize, int rngseed) {
  mem=false;
  free_recombination=true;
  outcrossing_rate=0.0;
@@ -24,8 +23,8 @@ haploid_pop_hop::haploid_pop_hop(int nloci, double popsize, int rngseed)
  setup(nloci, popsize, rngseed);
 }
 
-int haploid_pop_hop::setup(int nloci, double popsize, int rngseed)
-{
+
+int haploid_pop_hop::setup(int nloci, double popsize, int rngseed) {
  number_of_loci=nloci;
  population_size=popsize;
  if (rngseed==0) seed=time(NULL);
@@ -34,8 +33,7 @@ int haploid_pop_hop::setup(int nloci, double popsize, int rngseed)
 }
 
 
-int haploid_pop_hop::allocate_mem()
-{
+int haploid_pop_hop::allocate_mem() {
  // call superclass method
  int sc_return = haploid_gt_dis::allocate_mem();
  if (sc_return)
@@ -52,7 +50,7 @@ int haploid_pop_hop::allocate_mem()
  mem=true;
 
  // set hopping rates to zero
- return set_hopping_rate(0);
+ return set_hopping_rate(0.0);
 }
 
 
@@ -70,24 +68,44 @@ int haploid_pop_hop::free_mem() {
 }
 
 
-int haploid_pop_hop::set_hopping_rate(double h)
-{
- if (mem){
-  for (int gt=0; gt < (1<<number_of_loci); gt++) {
-   for (int locus = 0; locus<number_of_loci; locus++){
-    hopping_rates[gt][locus] = h;
-   }
-  }
-  return 0;
- } else {
+int haploid_pop_hop::set_hopping_rate(double h) {
+/*
+ * Generic hopping rate, mostly for testing purposes
+*/
+ if (!mem){
   cerr<<"haploid_pop_hop::set_hopping_rate(): allocate memory first!\n";
   return HG_MEMERR;
- } 
+ }
+ for (int gt=0; gt < (1<<number_of_loci); gt++) {
+  for (int locus = 0; locus<number_of_loci; locus++){
+   hopping_rates[gt][locus] = h;
+  }
+ }
+ return 0;
 }
 
 
-int haploid_pop_hop::hop()
-{
+int haploid_pop_hop::set_hopping_rate(double** h) {
+/*
+ * Genotype- and neighbour specific hopping rate. This must be a (2^L x L) matrix, i.e.
+ * every h[i] is an L vector. h[i][j] is the hopping rate FROM genotype i TO the
+ * neighbour with inversed j-th spin.
+*/
+ if (!mem){
+  cerr<<"haploid_pop_hop::set_hopping_rate(): allocate memory first!\n";
+  return HG_MEMERR;
+ }
+ // No dimensional check on h... please BE CAREFUL!
+ for (int gt=0; gt < (1<<number_of_loci); gt++){
+  for (int locus=0; locus<number_of_loci; locus++){
+   hopping_rates[gt][locus] = h[gt][locus];
+  }
+ }
+ return 0;
+}
+
+
+int haploid_pop_hop::hop() {
  // I can recycle the mutants attribute for my goals, since a pop does not mutate and hop at the same time
  mutants.set_state(HC_FUNC);
  population.set_state(HC_FUNC);

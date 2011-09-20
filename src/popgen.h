@@ -240,14 +240,15 @@ class haploid_pop_hop : public haploid_gt_dis
 	int free_mem();
 	// hopping rate could be made edge and direction-specific,
 	// but is local. Thus we need 2^L*L rates.
-	double** hopping_rates;
 public:
+	double** hopping_rates;
 	haploid_pop_hop();
 	~haploid_pop_hop();
 	haploid_pop_hop(int nloci, double popsize, int rngseed=0);
 	int setup(int nloci, double popsize, int rngseed=0);
 
 	int set_hopping_rate(double h);
+	int set_hopping_rate(double** h);
 	int hop();
 };
 
