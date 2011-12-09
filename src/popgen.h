@@ -95,7 +95,7 @@ class hypercube
 	const static double hypercubeversion=0.91;
 public:
 	double *coeff;		//array holding 2^N coefficients.
-						///a entry 0101001101 corresponds to a term with spins at each 1
+						///an entry 0101001101 corresponds to a term with spins at each 1
 	double *func;		//array holding the values of the function on the hypercube
 
 	int *order;			//Auxiliary array holding the number of spins, i.e. the number of ones of coeff[k]

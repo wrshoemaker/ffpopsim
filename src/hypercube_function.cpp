@@ -103,7 +103,7 @@ double hypercube_function::get_func_words(int *gt, int n_o_w)
 	{
 		//calculate the seed for the random number generator
 		for (int i=0; i<n_o_w; i++) gt_seed+=gt[i];
-		//add a gaussion random number to the fitness from the rng seeded with the genoytpe
+		//add a gaussian random number to the fitness from the rng seeded with the genoytpe
 		gsl_rng_set(rng,gt_seed+rng_offset);
 		result+=gsl_ran_gaussian(rng,epistatic_std);
 	}
