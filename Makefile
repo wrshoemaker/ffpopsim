@@ -43,9 +43,9 @@ HEADER_HIV = hivpopulation.h
 SOURCE_HIV = $(HEADER_HIV:%.h=%.cpp)
 OBJECT_HIV = $(SOURCE_HIV:%.cpp=%.o)
 
-OBJECTS = $(OBJECT_GENERIC) $(OBJECT_LOWD) $(OBJECT_HIGHD)
+OBJECTS = $(OBJECT_GENERIC) $(OBJECT_LOWD) $(OBJECT_HIGHD) $(OBJECT_HIV)
 
-src: $(SRCDIR)/$(LIBRARY) $(OBJECT_HIV:%=$(SRCDIR)/%)
+src: $(SRCDIR)/$(LIBRARY)
 
 $(SRCDIR)/$(LIBRARY): $(OBJECTS:%=$(SRCDIR)/%)
 	ar rcs $@ $^
@@ -83,8 +83,8 @@ clean-doc:
 ##==========================================================================
 testlibraries =  -lgsl -lgslcblas -lHandyTools -lPopGenLib 
 
-TESTS_LDFLAGS = -L$(SRCDIR)/ -L../HandyTools/src/ -L/usr/ -O2
-TESTS_CXXFLAGS = -I$(SRCDIR)/ -I../HandyTools/src/ -Wall -O2 -c -fPIC -g3
+TESTS_LDFLAGS = -L$(SRCDIR)/ -L$(SRCDIR)/../../HandyTools/src/ -L/usr/ -O2
+TESTS_CXXFLAGS = -I$(SRCDIR)/ -I$(SRCDIR)/../../HandyTools/src/ -Wall -O2 -c -fPIC -g3
 
 TESTS_LOWD = lowd
 TESTS_HIGHD = highd
