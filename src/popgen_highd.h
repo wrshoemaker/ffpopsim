@@ -4,6 +4,11 @@
  * @author Richard Neher, Boris Shraiman, Fabio Zanini
  * @version 
  * @date 2012-04-19
+ *
+ * HP_VERBOSE: degree of verbosity of haploid_clone. Levels:
+ * - 0: no messages
+ * - 1: most messages (enter/exit function)
+ * - 2: all messages
  */
 #ifndef POPGEN_HIGHD_H_
 #define POPGEN_HIGHD_H_
@@ -106,6 +111,8 @@ public:
 #define HP_VERBOSE 0
 #define NO_GENOTYPE -1
 #define HP_MINAF 0.02
+#define MAX_DELTAFITNESS 8
+#define MAX_POPSIZE 500000
 #define HP_NOTHING 1e-12
 #define HP_RANDOM_SAMPLE_FRAC 0.01
 #define FREE_RECOMBINATION 1
@@ -114,6 +121,7 @@ public:
 // Error Codes
 #define HP_BADARG -879564
 #define HP_MEMERR -986465
+#define HP_EXPLOSIONWARN 4
 #define HP_EXTINCTERR 5
 #define HP_NOBINSERR 6
 #define HP_WRONGBINSERR 7
@@ -233,7 +241,7 @@ public:
 	int get_generation(){return generation;}
 	int get_number_of_loci(){return number_of_loci;}
 	int get_pop_size() {return pop_size;}
-	double get_number_of_clones(){return current_pop->size();}
+	int get_number_of_clones(){return current_pop->size();}
 
 	// population parameters (read/write)
 	int target_pop_size;			// target (average) population size
@@ -248,13 +256,13 @@ public:
 	int init_genotypes(double *nu, int n_o_genotypes=0);
 
 	// modify population
-	void add_genotypes(boost::dynamic_bitset<> newgt,  int n);
+	void add_genotypes(boost::dynamic_bitset<> newgt, int n);
 	int add_fitness_coefficient(double value, vector <int> loci, int traitnumber=0){return trait[traitnumber].add_coefficient(value, loci);}
 	void clear_fitness_function(){for(int t=0; t<number_of_traits; t++){trait[t].coefficients_single_locus.clear(); trait[t].coefficients_epistasis.clear();}}
 	void flip_single_locus(unsigned int clonenum, int locus);
 
 	// evolve
-	int evolve(int gen=1);
+	int evolve(int gen=1);	
 	int bottleneck(int size_of_bottleneck);
 
 	// update traits and fitness and calculate statistics
@@ -286,10 +294,10 @@ public:
 
 	// allele frequencies
 	double get_allele_frequency(int l) {return allele_frequencies[l];}
-	double get_multi_point_frequency(vector <int> loci);
 	double get_pair_frequency(int locus1, int locus2);
 	vector <double> get_pair_frequencies(vector < vector <int> > *loci);
 	double get_chi(int l) {return 2*allele_frequencies[l]-1.0;}
+	double get_multi_point_frequency(vector <int> loci);
 
 	// histograms
 	int get_divergence_histogram(gsl_histogram **hist, unsigned int bins=10, vector <unsigned int *> *chunks=NULL, unsigned int every=1, unsigned int n_sample=1000);

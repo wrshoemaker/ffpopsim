@@ -2,26 +2,35 @@
 doc/latex/*
 doc/html/*
 
-# C++
-# Executables
+# Executables/ test files
 tests/lowd
 tests/highd
+tests/test.npz
+tests/test.txt
 
-## Compiled Object files
+# SWIG wrapper
+src/python/hivpython.py
+*_wrap.cpp
+
+# Compiled Object files
 *.slo
 *.lo
 *.o
 *.h.gch
 
-## Compiled Dynamic libraries
+# Compiled Dynamic libraries
 *.so
 
-## Compiled Static libraries
+# Compiled Static libraries
 *.lai
 *.la
 *.a
 
-## Packages
+# Byte-compiled Python
+*.pyc
+*.pyo
+
+# Packages
 *.egg
 *.egg-info
 dist
@@ -34,20 +43,17 @@ sdist
 develop-eggs
 .installed.cfg
 
-## Installer logs
+# Installer logs
 pip-log.txt
 
-## Unit test / coverage reports
+# Unit test / coverage reports
 .coverage
 .tox
 
-## Translations
+# Translations
 *.mo
 
-## Mr Developer
-.mr.developer.cfg
-
-#Vim
+# Vim
 .*.sw[a-z]
 *.un~
 Session.vim

@@ -13,6 +13,8 @@
 #include <iomanip>
 #include <boost/algorithm/string.hpp>
 
+#include "popgen_highd.h"
+
 #define HIVPOP_VERBOSE 0
 #define HIVPOP_BADARG -1354341
 #define NOTHING 1e-10
@@ -41,7 +43,7 @@ private:
 	double treatment;
 	gsl_rng* rng;
 	int seed;
-	using haploid_clone::set_up;	// only the new set_up functino is allowed, lest people mess with the genome length
+	using haploid_clone::set_up;	// only the new set_up function is allowed, lest people mess with the genome length
 public:
 	// constructors/destructors
 	hivpopulation();
