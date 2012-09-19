@@ -1,0 +1,8 @@
+STATIC LINKING OF GSL:
+
+This folder must include the following two files, copied from your system folders (they differ between linux and mac):
+
+- libgsl.a
+- libgslcblas.a
+
+There, you are all set. Compile the static Python bindings with make python.

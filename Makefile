@@ -119,11 +119,12 @@ clean-all: clean clean-doc clean-python-doc clean-swig
 # Profile flag to enable profiling with gprof.
 # (Un)Comment the next line to switch off (on) profiling.
 #PROFILEFLAGS := -pg
+CXXFLAGS := -Wall -$(OPTIMIZATION_LEVEL) -fPIC $(PROFILEFLAGS) $(CXXFLAGS)
 
 ##==========================================================================
 # C++ SOURCE
 ##==========================================================================
-SRC_CXXFLAGS= $(CXXFLAGS) -$(OPTIMIZATION_LEVEL) -fPIC $(PROFILEFLAGS)
+SRC_CXXFLAGS= $(CXXFLAGS)
 
 LIBRARY := libFFPopSim.a
 
@@ -199,7 +200,7 @@ clean-doc:
 ##==========================================================================
 # C++ TESTS
 ##==========================================================================
-TESTS_CXXFLAGS = $(CXXFLAGS) -I$(SRCDIR) -Wall -$(OPTIMIZATION_LEVEL) -c -fPIC
+TESTS_CXXFLAGS = $(CXXFLAGS) -Isrc
 TESTS_LDFLAGS = -$(OPTIMIZATION_LEVEL) $(PROFILEFLAGS)
 TEST_LIBDIRS = -L$(CURDIR)/$(SRCDIR)
 TESTS_LIBS = -lFFPopSim -lgsl -lgslcblas

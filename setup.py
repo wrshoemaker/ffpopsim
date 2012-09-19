@@ -44,7 +44,9 @@ VERSION = '1.1'
 SRCDIR = 'src'
 PYBDIR = SRCDIR+'/python'
 
-includes = includes + npdis.misc_util.get_numpy_include_dirs()
+# Include local static copies of GSL (headers and library object file)
+includes =  ['include'] + includes + npdis.misc_util.get_numpy_include_dirs()
+library_dirs = ['lib'] + library_dirs
 libs = ['gsl', 'gslcblas']
 
 # Setup function
@@ -68,6 +70,8 @@ setup(name='FFPopSim',
                              include_dirs=includes, 
                              library_dirs=library_dirs,
                              libraries=libs,
+                             extra_compile_args=[''],
+                             extra_objects=[''],
                             ),
                   ]
       )
