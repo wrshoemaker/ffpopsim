@@ -20,6 +20,13 @@ content:    Distutils setup script for the Python bindings of FFPopSim.
 
             to install the Python bindings of FFPopSim on the system. Note that
             calling this file directly does not clean the 'build' folder.
+
+Static building: copy your GSL includes and static lib files into
+
+    static/<architechture>/
+
+following the directory structure (i.e. include/gsl and /lib). Then, set the
+'platform' variable here below accordingly and build.
 '''
 from distutils.core import setup, Extension
 from numpy import distutils as npdis
@@ -37,6 +44,10 @@ includes = ['/usr/include', '/usr/local/include', '/opt/local/include']
 # can find GSL and Python 2.7
 library_dirs = ['/ebio/ag-neher/share/epd_free-7.1-2-rh5-x86_64/lib']
 
+# flag for static libraries
+platforms = ['linux_32', 'linux_64', 'mac_32', 'mac_64']
+platform = platforms[3]
+
 ############################################################################
 #                !!  DO NOT EDIT BELOW THIS LINE  !!                       #
 ############################################################################
@@ -45,8 +56,8 @@ SRCDIR = 'src'
 PYBDIR = SRCDIR+'/python'
 
 # Include local static copies of GSL (headers and library object file)
-includes =  ['include'] + includes + npdis.misc_util.get_numpy_include_dirs()
-library_dirs = ['lib'] + library_dirs
+includes =  ['static/'+platform+'/include'] + includes + npdis.misc_util.get_numpy_include_dirs()
+library_dirs = ['static/'+platform+'/lib'] + library_dirs
 libs = ['gsl', 'gslcblas']
 
 # Setup function

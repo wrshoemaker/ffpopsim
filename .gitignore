@@ -30,9 +30,11 @@ tests/_FFPopSim.so
 *.so
 
 # Compiled Static libraries
+# (keep the static libraries)
 *.lai
 *.la
 *.a
+!static/*/lib/*.a
 
 # Byte-compiled Python
 *.pyc
