@@ -46,7 +46,7 @@ library_dirs = ['/ebio/ag-neher/share/epd_free-7.1-2-rh5-x86_64/lib']
 
 # flag for static libraries
 platforms = ['linux_32', 'linux_64', 'mac_32', 'mac_64']
-platform = platforms[1]
+platform = platforms[3]
 
 ############################################################################
 #                !!  DO NOT EDIT BELOW THIS LINE  !!                       #
