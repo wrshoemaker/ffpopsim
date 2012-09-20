@@ -10,6 +10,7 @@ pkg/lib/*
 # Documentation
 doc/latex/*
 doc/html/*
+doc/python/build
 
 # Executables/ test files
 tests/lowd
