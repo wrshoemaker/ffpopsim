@@ -257,21 +257,14 @@ PYCMODULE := $(SWIG_MODULE:%.i=%.pyc)
 SOMODULE := $(SWIG_MODULE:%.i=_%.so)
 
 # Recipes
-python: $(PYBDIR)/$(PYMODULE) $(PYBDIR)/$(SOMODULE) $(DISTUTILS_SETUP)
+python:
+	$(PYTHON) setup.py build
+	rm -rf build/temp*
 
 python-install:
-	rm -rf build
 	$(PYTHON) setup.py install
 
-$(PYBDIR)/$(SOMODULE): $(PYBDIR)/$(SWIG_WRAP) $(PYBDIR)/$(PYMODULE) $(SOURCES:%=$(SRCDIR)/%)
-	rm -rf build
-	$(PYTHON) setup.py build_ext --inplace
-	mkdir -p $(PKGDIR)/python
-	cp -f $(PYBDIR)/$(PYMODULE) $(PKGDIR)/python/
-	cp -f $(PYBDIR)/$(SOMODULE) $(PKGDIR)/python/
-
 clean-python:
-	rm -rf build
 	cd $(PYBDIR); rm -rf $(SOMODULE) $(PYCMODULE)
 	cd $(PKGDIR)/python; rm -rf $(SOMODULE) $(PYMODULE) $(PYCMODULE)
 

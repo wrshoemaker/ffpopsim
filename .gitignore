@@ -27,17 +27,12 @@ tests/_FFPopSim.so
 *.h.gch
 
 # Compiled Dynamic libraries
-# (keep the binaries)
 *.so
-!binaries/*/*.so
-
 
 # Compiled Static libraries
-# (keep the static libraries)
 *.lai
 *.la
 *.a
-!static/*/lib/*.a
 
 # Byte-compiled Python
 *.pyc
@@ -47,7 +42,6 @@ tests/_FFPopSim.so
 *.egg
 *.egg-info
 dist
-build
 eggs
 parts
 bin
@@ -75,3 +69,8 @@ Session.vim
 .pydevproject
 Debug
 Release
+
+# (keep the static libraries and binaries)
+!static/*/lib/*.a
+!build/lib*/*.so
+
