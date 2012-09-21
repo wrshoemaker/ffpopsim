@@ -258,8 +258,9 @@ SOMODULE := $(SWIG_MODULE:%.i=_%.so)
 
 # Recipes
 python:
+	$(PYTHON) setup.py clean --all
 	$(PYTHON) setup.py build
-	rm -rf build/temp*
+	$(PYTHON) setup.py clean
 
 python-install:
 	$(PYTHON) setup.py install
