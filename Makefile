@@ -52,19 +52,39 @@
 #			PLATFORM-DEPENDENT OPTIONS			   #
 #									   #
 ############################################################################
-# Please select your C++ compiler
-CXX := g++
-
 # Please set your Python 2.7 executable if you want to build the Python
 # bindings. If you are only interested in the C++ part of the library,
 # comment out the following line
 PYTHON := python2.7
 
+# Note: please look in 'setup.py' if you are building the Python extension!
+#       You can call distutils with 'setup.py' directly if you prefer. The
+#       following options related to the C++ compiler and linker are limited
+#       to the C++ part of FFPopSim.
+
+# Please select your C++ compiler
+CXX := g++
+
+# Please select the optimization level of the library. Lower this number if
+# you prefer to use mildly optimized code only. On Mac OSX, you can use the
+# string 'fast' for maximal performance
+OPTIMIZATION_LEVEL := O2
+#OPTIMIZATION_LEVEL := fast
+
+# Please use the following variable for additional flags to the C++ compiler,
+# such as include folders (e.g. -I/opt/local/include)
+CXXFLAGS = -c -Wall -$(OPTIMIZATION_LEVEL) -fPIC
+
+# Please use the following variable for additional flags to the linker, such
+# as library folders for GSL (e.g. -L/opt/local/lib)
+LDFLAGS = -$(OPTIMIZATION_LEVEL)
+
+# Additional options used to regenerate the SWIG files or to rebuild the docs.
+
 # Please set your SWIG executable if you wish to regenerate SWIG C++ files
 # from the interface files. This is normally not required for compiling the
 # Python bindings.
 SWIG := swig
-
 
 # Please set your doxygen executable if you want to rebuild the C++
 # documentation.
@@ -74,18 +94,6 @@ DOXY := doxygen
 # rebuild the Python documentation.
 #SPHINX := sphinx-build
 SPHINX := sphinx-build2
-
-# Please select the optimization level of the library. Lower this number if
-# you prefer to use mildly optimized code only. On Mac OSX, you can use the
-# string 'fast' for maximal performance
-OPTIMIZATION_LEVEL := O2
-#OPTIMIZATION_LEVEL := fast
-
-# Please use the following variable for additional include folders to the
-# compiler (e.g. /opt/local/include)
-#CXXFLAGS = -I/opt/local/include
-
-# Please look in 'setup.py' if you are trying to compile the Python extension!
 
 ############################################################################
 #									   #
@@ -110,22 +118,19 @@ ifdef PYTHON
 endif
 
 # List all explicit recipes
-.PHONY : default all src tests doc python python-doc python-install profile swig clean clean-all clean-src clean-doc clean-tests clean-python clean-python-doc clean-profile clean-swig
+.PHONY : default all src tests doc python python-doc python-install profile swig clean clean-all clean-src clean-doc clean-tests clean-python clean-python-doc clean-profile clean-swig clean-python-all
 default: src tests $(python)
 all: src tests python doc python-doc
 clean: clean-src clean-tests clean-python clean-profile
-clean-all: clean clean-doc clean-python-doc clean-swig
+clean-all: clean clean-doc clean-python-doc clean-swig clean-python-all
 
 # Profile flag to enable profiling with gprof.
 # (Un)Comment the next line to switch off (on) profiling.
 #PROFILEFLAGS := -pg
-CXXFLAGS := -Wall -$(OPTIMIZATION_LEVEL) -fPIC $(PROFILEFLAGS) $(CXXFLAGS)
 
 ##==========================================================================
 # C++ SOURCE
 ##==========================================================================
-SRC_CXXFLAGS= $(CXXFLAGS)
-
 LIBRARY := libFFPopSim.a
 
 HEADER_GENERIC := ffpopsim_generic.h
@@ -164,19 +169,19 @@ $(SRCDIR)/$(LIBRARY): $(OBJECTS:%=$(SRCDIR)/%)
 	cp $(HEADER_HIV:%=$(SRCDIR)/%) $(PKGDIR)/include/
 
 $(OBJECT_GENERIC:%=$(SRCDIR)/%): $(SOURCE_GENERIC:%=$(SRCDIR)/%)
-	$(CXX) $(SRC_CXXFLAGS) -c -o $@ $(@:.o=.cpp)
+	$(CXX) $(CXXFLAGS) -c -o $@ $(@:.o=.cpp)
 
 $(OBJECT_LOWD:%=$(SRCDIR)/%): $(SOURCE_LOWD:%=$(SRCDIR)/%) $(HEADER_LOWD:%=$(SRCDIR)/%)
-	$(CXX) $(SRC_CXXFLAGS) -c -o $@ $(@:.o=.cpp)
+	$(CXX) $(CXXFLAGS) -c -o $@ $(@:.o=.cpp)
 
 $(OBJECT_HIGHD:%=$(SRCDIR)/%): $(SOURCE_HIGHD:%=$(SRCDIR)/%) $(HEADER_HIGHD:%=$(SRCDIR)/%)
-	$(CXX) $(SRC_CXXFLAGS) -c -o $@ $(@:.o=.cpp)
+	$(CXX) $(CXXFLAGS) -c -o $@ $(@:.o=.cpp)
 
 $(OBJECT_HIV:%=$(SRCDIR)/%): $(SOURCE_HIV:%=$(SRCDIR)/%) $(HEADER_HIV:%=$(SRCDIR)/%)
-	$(CXX) $(SRC_CXXFLAGS) -c -o $@ $(@:.o=.cpp)
+	$(CXX) $(CXXFLAGS) -c -o $@ $(@:.o=.cpp)
 
 $(OBJECT_HIVGENE:%=$(SRCDIR)/%): $(SOURCE_HIVGENE:%=$(SRCDIR)/%) $(HEADER_HIV:%=$(SRCDIR)/%)
-	$(CXX) $(SRC_CXXFLAGS) -c -o $@ $(@:.o=.cpp)
+	$(CXX) $(CXXFLAGS) -c -o $@ $(@:.o=.cpp)
 
 clean-src:
 	cd $(SRCDIR); rm -rf $(LIBRARY) *.o *.h.gch
@@ -200,8 +205,8 @@ clean-doc:
 ##==========================================================================
 # C++ TESTS
 ##==========================================================================
-TESTS_CXXFLAGS = $(CXXFLAGS) -Isrc
-TESTS_LDFLAGS = -$(OPTIMIZATION_LEVEL) $(PROFILEFLAGS)
+TESTS_CXXFLAGS = $(CXXFLAGS) -I$(SRCDIR)
+TESTS_LDFLAGS = $(LDFLAGS) $(PROFILEFLAGS)
 TEST_LIBDIRS = -L$(CURDIR)/$(SRCDIR)
 TESTS_LIBS = -lFFPopSim -lgsl -lgslcblas
 
@@ -257,17 +262,24 @@ PYCMODULE := $(SWIG_MODULE:%.i=%.pyc)
 SOMODULE := $(SWIG_MODULE:%.i=_%.so)
 
 # Recipes
-python:
+python: $(PYBDIR)/$(SWIG_WRAP) $(PYBDIR)/$(PYMODULE) $(SOURCES:%=$(SRCDIR)/%) $(DISTUTILS_SETUP)
+	mkdir -p $(PKGDIR)/python
 	$(PYTHON) setup.py clean --all
-	$(PYTHON) setup.py build
+	$(PYTHON) setup.py install --install-lib=$(PYBDIR)
+	$(PYTHON) setup.py install --install-lib=$(PKGDIR)/python
 	$(PYTHON) setup.py clean
 
 python-install:
-	$(PYTHON) setup.py install
+	$(PYTHON) setup.py install --skip-build --install-lib=$(PKGDIR)/python
+	$(PYTHON) setup.py install --skip-build
 
 clean-python:
-	cd $(PYBDIR); rm -rf $(SOMODULE) $(PYCMODULE)
-	cd $(PKGDIR)/python; rm -rf $(SOMODULE) $(PYMODULE) $(PYCMODULE)
+	cd $(PKGDIR); rm -rf python
+	$(PYTHON) setup.py clean
+
+clean-python-all:
+	cd $(PKGDIR); rm -rf python
+	$(PYTHON) setup.py clean --all
 
 ##==========================================================================
 # SWIG (USED FOR PYTHON BINDINGS)
