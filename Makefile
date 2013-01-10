@@ -195,6 +195,7 @@ DOXYFILE   = $(DOCDIR)/cpp/Doxyfile
 # Recipes
 doc:
 	$(DOXY) $(DOXYFILE)
+	mkdir -p $(PKGDIR)/doc
 	cd $(PKGDIR)/doc; rm -rf cpp
 	mkdir -p $(PKGDIR)/doc/cpp
 	mv -f $(DOCDIR)/cpp/html $(PKGDIR)/doc/cpp/
@@ -254,6 +255,7 @@ SWIG_GENERIC := ffpopsim_generic.i
 SWIG_LOWD := ffpopsim_lowd.i
 SWIG_HIGHD := ffpopsim_highd.i
 SWIG_HIV := hivpopulation.i
+SWIG_TYPEMAPS := ffpopsim_typemaps.i
 
 SWIG_WRAP := $(SWIG_MODULE:%.i=%_wrap.cpp)
 
@@ -288,7 +290,7 @@ SWIGFLAGS := -c++ -python -O -castmode -keyword
 
 swig: $(PYBDIR)/$(SWIG_WRAP) $(PYBDIR)/$(PYMODULE)
 
-$(PYBDIR)/$(SWIG_WRAP) $(PYBDIR)/$(PYMODULE): $(PYBDIR)/$(SWIG_MODULE) $(PYBDIR)/$(SWIG_GENERIC) $(PYBDIR)/$(SWIG_LOWD) $(PYBDIR)/$(SWIG_HIGHD) $(PYBDIR)/$(SWIG_HIV)
+$(PYBDIR)/$(SWIG_WRAP) $(PYBDIR)/$(PYMODULE): $(PYBDIR)/$(SWIG_MODULE) $(PYBDIR)/$(SWIG_GENERIC) $(PYBDIR)/$(SWIG_LOWD) $(PYBDIR)/$(SWIG_HIGHD) $(PYBDIR)/$(SWIG_HIV) $(PYBDIR)/$(SWIG_TYPEMAPS)
 	$(SWIG) $(SWIGFLAGS) -o $(PYBDIR)/$(SWIG_WRAP) $(PYBDIR)/$(SWIG_MODULE)
 
 clean-swig:
@@ -299,6 +301,7 @@ clean-swig:
 ##==========================================================================
 python-doc:
 	cd $(PYDOCDIR); $(MAKE) SPHINXBUILD=$(SPHINX) html
+	mkdir -p $(PKGDIR)/doc
 	cd $(PKGDIR)/doc; rm -rf python
 	mkdir -p $(PKGDIR)/doc/python
 	mv -f $(PYDOCDIR)/build/html $(PKGDIR)/doc/python/

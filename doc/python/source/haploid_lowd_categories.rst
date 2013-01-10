@@ -14,6 +14,7 @@ Initialization
    :nosignatures:
 
    haploid_lowd.__init__
+   haploid_lowd.copy
 
 Attributes
 ^^^^^^^^^^
@@ -54,6 +55,7 @@ Set the fitness landscape
 
    haploid_lowd.set_fitness_additive
    haploid_lowd.set_fitness_function
+   haploid_lowd.set_fitness_coefficients
 
 
 Mutation and Recombination
@@ -66,6 +68,7 @@ Mutation and Recombination
    haploid_lowd.recombination_model
 
    haploid_lowd.set_recombination_rates
+   haploid_lowd.get_recombination_rates
    haploid_lowd.set_mutation_rates
    haploid_lowd.get_mutation_rates
 

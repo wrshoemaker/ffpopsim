@@ -69,6 +69,15 @@ For more usage examples, please consult the ``tests`` and ``examples`` folders.
 import_array();
 %}
 
+/* STL typemaps */
+%include <typemaps.i>
+%include <std_vector.i>
+%template(_intVector) std::vector<int>;
+/*%template(_doubleVector) std::vector<double>;*/
+
+/* FFPopSim typemaps */
+%include "ffpopsim_typemaps.i";
+
 /* activate autodoc */
 %feature("autodoc", "1");
 

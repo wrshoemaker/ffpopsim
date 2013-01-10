@@ -159,11 +159,13 @@ public:
 	double N(){return population_size;}
 	double get_population_size(){return population_size;}
 	double get_generation(){return long_time_generation+generation;}
+        void set_generation(double g){if(g > HG_LONGTIMEGEN) {generation = fmod(g, HG_LONGTIMEGEN); long_time_generation = g - generation;} else generation = g;}
 	double get_mutation_rate(int locus, int direction) {return mutation_rates[direction][locus];}
 	int get_recombination_model(){return recombination_model;}
+	double get_recombination_rate(int locus);
 
 	//initialization
-	int set_allele_frequencies(double *freq, unsigned long N);
+	int set_allele_frequencies(double* frequencies, unsigned long N);
 	int set_genotypes(vector <index_value_pair_t> gt);
 	int set_wildtype(unsigned long N);
 
@@ -202,7 +204,7 @@ public:
 	double allele_entropy();
 
 	// fitness/phenotype readout
-	double get_fitness(int gt) {return fitness.get_func(gt);}
+	double get_fitness(int genotype) {return fitness.get_func(genotype);}
 	stat_t get_fitness_statistics();
 
 protected:

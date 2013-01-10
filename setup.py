@@ -30,6 +30,8 @@ following the directory structure (i.e. include/gsl and /lib). Then, set the
 '''
 from distutils.core import setup, Extension
 from numpy import distutils as npdis
+import sys
+import platform as pfm
 
 ############################################################################
 #									   #
@@ -41,12 +43,8 @@ from numpy import distutils as npdis
 includes = ['/usr/include', '/usr/local/include', '/opt/local/include']
 
 # Please add your shared library folders to the following list, where the linker
-# can find GSL and Python 2.7
-library_dirs = ['/ebio/ag-neher/share/epd_free-7.1-2-rh5-x86_64/lib']
-
-# flag for static libraries
-platforms = ['linux_32', 'linux_64', 'mac_32', 'mac_64']
-platform = platforms[1]
+# can find Python 2.7 (GLS is static in this branch)
+library_dirs = ['/ebio/ag-neher/share/programs/lib']
 
 ############################################################################
 #                !!  DO NOT EDIT BELOW THIS LINE  !!                       #
@@ -54,6 +52,22 @@ platform = platforms[1]
 VERSION = '1.1'
 SRCDIR = 'src'
 PYBDIR = SRCDIR+'/python'
+
+# Find the current platform and Python interpreter 64-bitness
+# Mac OSX
+if pfm.system().lower() == 'darwin':
+    if sys.maxsize > 2**32:
+        platform = 'mac_64'
+    else:
+        platform = 'mac_32'
+# Linux
+else:
+    if pfm.architecture()[0][:2] == '64':
+        platform = 'linux_64'
+    else:
+        platform = 'linux_32'
+print 'The current platform is recognized as: '+platform+''
+print 'If this is not correct, please modify setup.py manually.'
 
 # Include local static copies of GSL (headers and library object file)
 includes =  ['static/'+platform+'/include'] + includes + npdis.misc_util.get_numpy_include_dirs()

@@ -18,16 +18,18 @@
  * along with FFPopSim. If not, see <http://www.gnu.org/licenses/>.
  */
 
-/**** HIVGENE ****/
+/*****************************************************************************/
+/* HIVGENE                                                                   */
+/*****************************************************************************/
 %feature("autodoc", "Structure for an HIV gene.") hivgene;
-
 %extend hivgene {
+%feature("autodoc", "x.__str__() <==> str(x)") __str__;
+%feature("autodoc", "x.__repr__() <==> repr(x)") __repr__;
 const char* __str__() {
         static char buffer[255];
         sprintf(buffer,"hivgene: start: %d, end: %d", $self->start, $self->end);
         return &buffer[0];
 }
-
 const char* __repr__() {
         static char buffer[255];
         sprintf(buffer,"hivgene(%d, %d)", $self->start, $self->end);
@@ -38,8 +40,9 @@ const char* __repr__() {
 %feature("autodoc", "Final position of the gene") end;
 }
 
-
-/**** HIVPOPULATION ****/
+/*****************************************************************************/
+/* HIVPOPULATION                                                             */
+/*****************************************************************************/
 %define DOCSTRING_HIVPOPULATION
 "Class for HIV population genetics (genome size = 10000).
 
@@ -79,7 +82,6 @@ The gene structure of HIV is not modelled explicitely, except for a stub of
 %feature("autodoc", DOCSTRING_HIVPOPULATION) hivpopulation;
 
 %extend hivpopulation {
-
 %feature("autodoc",
 "Construct a HIV population with certain parameters.
 
@@ -93,11 +95,6 @@ Parameters:
 
 .. note:: the genome length is 10000 (see HIVGENOME).
 ") hivpopulation;
-
-/* we have two traits anyway */
-%ignore add_fitness_coefficient;
-%ignore clear_fitness;
-
 /* constructor */
 %exception hivpopulation {
         try {
@@ -109,6 +106,8 @@ Parameters:
 }
 
 /* string representations */
+%feature("autodoc", "x.__str__() <==> str(x)") __str__;
+%feature("autodoc", "x.__repr__() <==> repr(x)") __repr__;
 const char* __str__() {
         static char buffer[255];
         sprintf(buffer,"hivpopulation: N = %d", $self->N());
@@ -121,19 +120,51 @@ const char* __repr__() {
         return &buffer[0];
 }
 
+/* copy */
+%pythoncode{
+def copy(self, rng_seed=0):
+    '''Copy population into new instance.
+    
+    Parameters:
+       - rng_seed: random number to initialize the new population
+    '''
+    pop = hivpopulation(self.N,
+                        rng_seed=rng_seed,
+                        mutation_rate=self.mutation_rate,
+                        coinfection_rate=self.outcrossing_rate,
+                        crossover_rate=self.crossover_rate)
+
+    # Fitness
+    for i in xrange(self.number_of_traits):
+        pop.set_trait_additive(self.get_trait_additive(i), i)
+        for coeff in self.get_trait_epistasis(i):
+            pop.add_trait_coefficient(coeff[0], coeff[1], i)
+
+    # Population parameters
+    pop.carrying_capacity = self.carrying_capacity
+    pop.set_genotypes(self.get_genotypes(), self.get_clone_sizes())    
+
+    # Evolution
+    pop._set_generation(self.generation)
+    
+    return pop
+}
+
+/* we have two traits anyway */
+%ignore add_fitness_coefficient;
+%ignore clear_fitness;
+
 /* treatment */
+%ignore set_treatment;
+%ignore get_treatment;
 %feature("autodoc",
 "Treatment weight (between 0 and 1)
 
 .. note:: this variable controls how important is either of the two phenotypic
           traits, replication and resistance. Their contribution to fitness is
           always linear (in this implementation).
-") get_treatment;
-%rename (_set_treatment) set_treatment;
-%rename (_get_treatment) get_treatment;
-%pythoncode {
-treatment = property(_get_treatment, _set_treatment)
-}
+") treatment;
+double treatment;
 
 /* read selection/resistance coefficients */
 %feature("autodoc",
@@ -150,15 +181,6 @@ Parameters:
    - filename: string with the name of the file to read the coefficients from
 ") read_resistance_coefficients;
 
-%typemap(in) istream &model (std::ifstream temp) {
-        if (!PyString_Check($input)) {
-                PyErr_SetString(PyExc_ValueError, "Expecting a string");
-                return NULL;
-        }
-        temp.open(PyString_AsString($input));
-        $1 = &temp;
-}
-
 /* write genotypes */
 %feature("autodoc",
 "Store random genotypes into a plain text file.
@@ -170,14 +192,6 @@ Parameters:
    - start: if only a portion of the genome is to be stored, start from this position
    - length: store a chunk from ``start`` to this length
 ") write_genotypes;
-%typemap(in) ostream &out_genotypes (std::ofstream temp) {
-        if (!PyString_Check($input)) {
-                PyErr_SetString(PyExc_ValueError, "Expecting a string");
-                return NULL;
-        }
-        temp.open(PyString_AsString($input));
-        $1 = &temp;
-}
 
 %pythoncode {
 def write_genotypes_compressed(self, filename, sample_size, gt_label='', start=0, length=0):
@@ -200,7 +214,7 @@ def write_genotypes_compressed(self, filename, sample_size, gt_label='', start=0
     d = {}
     for i in xrange(sample_size):
         rcl = self.random_clone()
-        d['>'+str(i)+'_GT-'+gt_label+'_'+str(rcl)] = self._get_genotype(rcl,L)[start:start+length]
+        d['>'+str(i)+'_GT-'+gt_label+'_'+str(rcl)] = self.get_genotype(rcl)[start:start+length]
     np.savez_compressed(filename, **d)    
 }
 
@@ -512,5 +526,14 @@ def set_resistance_landscape(self,
 
 
 }
-
 } /* extend hivpopulation */
+
+%{
+double hivpopulation_treatment_get(hivpopulation *h) {
+  return (double) h->get_treatment();
+}
+void hivpopulation_treatment_set(hivpopulation *h, double t) {
+  h->set_treatment(t);
+}
+%} /* attributes of hivpopulation */
+/*****************************************************************************/
