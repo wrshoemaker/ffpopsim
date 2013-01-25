@@ -49,7 +49,7 @@ library_dirs = ['/ebio/ag-neher/share/programs/lib']
 ############################################################################
 #                !!  DO NOT EDIT BELOW THIS LINE  !!                       #
 ############################################################################
-VERSION = '1.1'
+VERSION = '1.3'
 SRCDIR = 'src'
 PYBDIR = SRCDIR+'/python'
 
@@ -90,6 +90,8 @@ setup(name='FFPopSim',
                                            SRCDIR+'/haploid_lowd.cpp', 
                                            SRCDIR+'/hivpopulation.cpp',
                                            SRCDIR+'/hivgene.cpp',
+                                           SRCDIR+'/rootedTree.cpp',
+                                           SRCDIR+'/multiLocusGenealogy.cpp',
                                            SRCDIR+'/hypercube_lowd.cpp', 
                                            SRCDIR+'/hypercube_highd.cpp'], 
                              include_dirs=includes, 
