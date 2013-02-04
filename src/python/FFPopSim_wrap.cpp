@@ -2986,28 +2986,31 @@ SWIG_Python_NonDynamicSetAttr(PyObject *obj, PyObject *name, PyObject *value) {
 #define SWIGTYPE_p_node_t swig_types[17]
 #define SWIGTYPE_p_ostream swig_types[18]
 #define SWIGTYPE_p_p_PyObject swig_types[19]
-#define SWIGTYPE_p_rooted_tree swig_types[20]
-#define SWIGTYPE_p_size_type swig_types[21]
-#define SWIGTYPE_p_stat_t swig_types[22]
-#define SWIGTYPE_p_std__allocatorT_int_t swig_types[23]
-#define SWIGTYPE_p_std__allocatorT_std__pairT_tree_key_t_const_edge_t_t_t swig_types[24]
-#define SWIGTYPE_p_std__allocatorT_std__pairT_tree_key_t_const_node_t_t_t swig_types[25]
-#define SWIGTYPE_p_std__allocatorT_step_t_t swig_types[26]
-#define SWIGTYPE_p_std__allocatorT_tree_key_t_t swig_types[27]
-#define SWIGTYPE_p_std__invalid_argument swig_types[28]
-#define SWIGTYPE_p_std__lessT_tree_key_t_t swig_types[29]
-#define SWIGTYPE_p_std__listT_tree_key_t_std__allocatorT_tree_key_t_t_t swig_types[30]
-#define SWIGTYPE_p_std__mapT_tree_key_t_edge_t_std__lessT_tree_key_t_t_std__allocatorT_std__pairT_tree_key_t_const_edge_t_t_t_t swig_types[31]
-#define SWIGTYPE_p_std__mapT_tree_key_t_node_t_std__lessT_tree_key_t_t_std__allocatorT_std__pairT_tree_key_t_const_node_t_t_t_t swig_types[32]
-#define SWIGTYPE_p_std__vectorT_int_std__allocatorT_int_t_t swig_types[33]
-#define SWIGTYPE_p_std__vectorT_step_t_std__allocatorT_step_t_t_t swig_types[34]
-#define SWIGTYPE_p_std__vectorT_tree_key_t_std__allocatorT_tree_key_t_t_t swig_types[35]
-#define SWIGTYPE_p_step_t swig_types[36]
-#define SWIGTYPE_p_swig__SwigPyIterator swig_types[37]
-#define SWIGTYPE_p_tree_key_t swig_types[38]
-#define SWIGTYPE_p_value_type swig_types[39]
-static swig_type_info *swig_types[41];
-static swig_module_info swig_module = {swig_types, 40, 0, 0, 0, 0};
+#define SWIGTYPE_p_poly_t swig_types[20]
+#define SWIGTYPE_p_rooted_tree swig_types[21]
+#define SWIGTYPE_p_size_type swig_types[22]
+#define SWIGTYPE_p_stat_t swig_types[23]
+#define SWIGTYPE_p_std__allocatorT_int_t swig_types[24]
+#define SWIGTYPE_p_std__allocatorT_poly_t_t swig_types[25]
+#define SWIGTYPE_p_std__allocatorT_std__pairT_tree_key_t_const_edge_t_t_t swig_types[26]
+#define SWIGTYPE_p_std__allocatorT_std__pairT_tree_key_t_const_node_t_t_t swig_types[27]
+#define SWIGTYPE_p_std__allocatorT_step_t_t swig_types[28]
+#define SWIGTYPE_p_std__allocatorT_tree_key_t_t swig_types[29]
+#define SWIGTYPE_p_std__invalid_argument swig_types[30]
+#define SWIGTYPE_p_std__lessT_tree_key_t_t swig_types[31]
+#define SWIGTYPE_p_std__listT_tree_key_t_std__allocatorT_tree_key_t_t_t swig_types[32]
+#define SWIGTYPE_p_std__mapT_tree_key_t_edge_t_std__lessT_tree_key_t_t_std__allocatorT_std__pairT_tree_key_t_const_edge_t_t_t_t swig_types[33]
+#define SWIGTYPE_p_std__mapT_tree_key_t_node_t_std__lessT_tree_key_t_t_std__allocatorT_std__pairT_tree_key_t_const_node_t_t_t_t swig_types[34]
+#define SWIGTYPE_p_std__vectorT_int_std__allocatorT_int_t_t swig_types[35]
+#define SWIGTYPE_p_std__vectorT_poly_t_std__allocatorT_poly_t_t_t swig_types[36]
+#define SWIGTYPE_p_std__vectorT_step_t_std__allocatorT_step_t_t_t swig_types[37]
+#define SWIGTYPE_p_std__vectorT_tree_key_t_std__allocatorT_tree_key_t_t_t swig_types[38]
+#define SWIGTYPE_p_step_t swig_types[39]
+#define SWIGTYPE_p_swig__SwigPyIterator swig_types[40]
+#define SWIGTYPE_p_tree_key_t swig_types[41]
+#define SWIGTYPE_p_value_type swig_types[42]
+static swig_type_info *swig_types[44];
+static swig_module_info swig_module = {swig_types, 43, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -5646,6 +5649,108 @@ SWIGINTERN PyObject *std_map_Sl_tree_key_t_Sc_node_t_Sg__asdict(std::map< tree_k
       return swig::traits_from< std::map<tree_key_t,node_t,std::less< tree_key_t >,std::allocator< std::pair< tree_key_t const,node_t > > > >::asdict(*self);
     }
 
+  namespace swig {
+    template <>  struct traits<poly_t > {
+      typedef pointer_category category;
+      static const char* type_name() { return"poly_t"; }
+    };
+  }
+
+
+      namespace swig {
+	template <>  struct traits<std::vector<poly_t, std::allocator< poly_t > > > {
+	  typedef pointer_category category;
+	  static const char* type_name() {
+	    return "std::vector<" "poly_t" "," "std::allocator< poly_t >" " >";
+	  }
+	};
+      }
+    
+SWIGINTERN swig::SwigPyIterator *std_vector_Sl_poly_t_Sg__iterator(std::vector< poly_t > *self,PyObject **PYTHON_SELF){
+      return swig::make_output_iterator(self->begin(), self->begin(), self->end(), *PYTHON_SELF);
+    }
+SWIGINTERN bool std_vector_Sl_poly_t_Sg____nonzero__(std::vector< poly_t > const *self){
+      return !(self->empty());
+    }
+SWIGINTERN bool std_vector_Sl_poly_t_Sg____bool__(std::vector< poly_t > const *self){
+      return !(self->empty());
+    }
+SWIGINTERN std::vector< poly_t >::size_type std_vector_Sl_poly_t_Sg____len__(std::vector< poly_t > const *self){
+      return self->size();
+    }
+SWIGINTERN std::vector< poly_t >::value_type std_vector_Sl_poly_t_Sg__pop(std::vector< poly_t > *self){
+      if (self->size() == 0)
+	throw std::out_of_range("pop from empty container");
+      std::vector<poly_t,std::allocator< poly_t > >::value_type x = self->back();
+      self->pop_back();
+      return x;
+    }
+SWIGINTERN std::vector< poly_t,std::allocator< poly_t > > *std_vector_Sl_poly_t_Sg____getslice__(std::vector< poly_t > *self,std::vector< poly_t >::difference_type i,std::vector< poly_t >::difference_type j){
+      return swig::getslice(self, i, j, 1);
+    }
+SWIGINTERN void std_vector_Sl_poly_t_Sg____setslice__(std::vector< poly_t > *self,std::vector< poly_t >::difference_type i,std::vector< poly_t >::difference_type j,std::vector< poly_t,std::allocator< poly_t > > const &v=std::vector< poly_t,std::allocator< poly_t > >()){
+      swig::setslice(self, i, j, 1, v);
+    }
+SWIGINTERN void std_vector_Sl_poly_t_Sg____delslice__(std::vector< poly_t > *self,std::vector< poly_t >::difference_type i,std::vector< poly_t >::difference_type j){
+      swig::delslice(self, i, j, 1);
+    }
+SWIGINTERN void std_vector_Sl_poly_t_Sg____delitem____SWIG_0(std::vector< poly_t > *self,std::vector< poly_t >::difference_type i){
+      self->erase(swig::getpos(self,i));
+    }
+SWIGINTERN std::vector< poly_t,std::allocator< poly_t > > *std_vector_Sl_poly_t_Sg____getitem____SWIG_0(std::vector< poly_t > *self,PySliceObject *slice){
+      Py_ssize_t i, j, step;
+      if( !PySlice_Check(slice) ) {
+        SWIG_Error(SWIG_TypeError, "Slice object expected.");
+        return NULL;
+      }
+      PySlice_GetIndices(SWIGPY_SLICE_ARG(slice), (Py_ssize_t)self->size(), &i, &j, &step);
+      std::vector<poly_t,std::allocator< poly_t > >::difference_type id = i;
+      std::vector<poly_t,std::allocator< poly_t > >::difference_type jd = j;
+      return swig::getslice(self, id, jd, step);
+    }
+SWIGINTERN void std_vector_Sl_poly_t_Sg____setitem____SWIG_0(std::vector< poly_t > *self,PySliceObject *slice,std::vector< poly_t,std::allocator< poly_t > > const &v){
+      Py_ssize_t i, j, step;
+      if( !PySlice_Check(slice) ) {
+        SWIG_Error(SWIG_TypeError, "Slice object expected.");
+        return;
+      }
+      PySlice_GetIndices(SWIGPY_SLICE_ARG(slice), (Py_ssize_t)self->size(), &i, &j, &step);
+      std::vector<poly_t,std::allocator< poly_t > >::difference_type id = i;
+      std::vector<poly_t,std::allocator< poly_t > >::difference_type jd = j;
+      swig::setslice(self, id, jd, step, v);
+    }
+SWIGINTERN void std_vector_Sl_poly_t_Sg____setitem____SWIG_1(std::vector< poly_t > *self,PySliceObject *slice){
+      Py_ssize_t i, j, step;
+      if( !PySlice_Check(slice) ) {
+        SWIG_Error(SWIG_TypeError, "Slice object expected.");
+        return;
+      }
+      PySlice_GetIndices(SWIGPY_SLICE_ARG(slice), (Py_ssize_t)self->size(), &i, &j, &step);
+      std::vector<poly_t,std::allocator< poly_t > >::difference_type id = i;
+      std::vector<poly_t,std::allocator< poly_t > >::difference_type jd = j;
+      swig::delslice(self, id, jd, step);
+    }
+SWIGINTERN void std_vector_Sl_poly_t_Sg____delitem____SWIG_1(std::vector< poly_t > *self,PySliceObject *slice){
+      Py_ssize_t i, j, step;
+      if( !PySlice_Check(slice) ) {
+        SWIG_Error(SWIG_TypeError, "Slice object expected.");
+        return;
+      }
+      PySlice_GetIndices(SWIGPY_SLICE_ARG(slice), (Py_ssize_t)self->size(), &i, &j, &step);
+      std::vector<poly_t,std::allocator< poly_t > >::difference_type id = i;
+      std::vector<poly_t,std::allocator< poly_t > >::difference_type jd = j;
+      swig::delslice(self, id, jd, step);
+    }
+SWIGINTERN std::vector< poly_t >::value_type const &std_vector_Sl_poly_t_Sg____getitem____SWIG_1(std::vector< poly_t > const *self,std::vector< poly_t >::difference_type i){
+      return *(swig::cgetpos(self, i));
+    }
+SWIGINTERN void std_vector_Sl_poly_t_Sg____setitem____SWIG_2(std::vector< poly_t > *self,std::vector< poly_t >::difference_type i,std::vector< poly_t >::value_type const &x){
+      *(swig::getpos(self,i)) = x;
+    }
+SWIGINTERN void std_vector_Sl_poly_t_Sg__append(std::vector< poly_t > *self,std::vector< poly_t >::value_type const &x){
+      self->push_back(x);
+    }
+
   #define SWIG_From_double   PyFloat_FromDouble 
 
 SWIGINTERN char const *index_value_pair_t___str__(index_value_pair_t *self){
@@ -6314,6 +6419,10 @@ const double haploid_highd_participation_ratio_get(haploid_highd *h) {
   return (const double) h->get_participation_ratio();
 }
 
+const bool haploid_highd_all_polymorphic_get(haploid_highd *h) {
+  return (const bool) h->is_all_polymorphic();
+}
+
 SWIGINTERN char const *clone_t___str__(clone_t *self){
         static char buffer[255];
         sprintf(buffer,"clone: %u traits, genome size = %u",
@@ -6372,6 +6481,26 @@ SWIGINTERN char const *edge_t___repr__(edge_t *self){
         return &buffer[0];
 }
 SWIGINTERN int edge_t__get_segment_chunk(edge_t *self,int i){return (self->segment)[i];}
+SWIGINTERN char const *poly_t___str__(poly_t *self){
+        static char buffer[255];
+        sprintf(buffer,"polymorphism: birth = %d, sweep time = %d, effect = %f, fitness = %f, fitness variance = %f",
+                       (int)(self->birth),
+                       (int)(self->sweep_time),
+                       (double)(self->effect),
+                       (double)(self->fitness),
+                       (double)(self->fitness_variance));
+        return &buffer[0];
+}
+SWIGINTERN char const *poly_t___repr__(poly_t *self){
+        static char buffer[255];
+        sprintf(buffer,"polymorphism(b=%d, age=%d, e=%f, f=%f, fvar=%f)",
+                       (int)(self->birth),
+                       (int)(self->sweep_time),
+                       (double)(self->effect),
+                       (double)(self->fitness),
+                       (double)(self->fitness_variance));
+        return &buffer[0];
+}
 
 SWIGINTERNINLINE PyObject *
 SWIG_From_std_string  (const std::string& s)
@@ -6495,6 +6624,12 @@ SWIGINTERN multi_locus_genealogy haploid_highd__get_genealogy(haploid_highd *sel
 SWIGINTERN void haploid_highd_get_allele_frequencies(haploid_highd *self,double *ARGOUT_ARRAY1,int DIM1){
         for(size_t i=0; i < (size_t)self->get_number_of_loci(); i++)
                 ARGOUT_ARRAY1[i] = self->get_allele_frequency(i);
+}
+SWIGINTERN void haploid_highd_get_derived_allele_frequencies(haploid_highd *self,double *ARGOUT_ARRAY1,int DIM1){
+        if (self->is_all_polymorphic()){
+                for(size_t i=0; i < (size_t)self->get_number_of_loci(); i++)
+                        ARGOUT_ARRAY1[i] = self->get_derived_allele_frequency(i);
+    }
 }
 SWIGINTERN void haploid_highd_get_trait_additive(haploid_highd *self,double *ARGOUT_ARRAY1,int DIM1,int t=0){
         /* Initialize to zero */
@@ -18717,6 +18852,2139 @@ SWIGINTERN PyObject *map_key_node_swiginit(PyObject *SWIGUNUSEDPARM(self), PyObj
   return SWIG_Python_InitShadowInstance(args);
 }
 
+SWIGINTERN PyObject *_wrap_vector_polymorphism_iterator(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< poly_t > *arg1 = (std::vector< poly_t > *) 0 ;
+  PyObject **arg2 = (PyObject **) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  swig::SwigPyIterator *result = 0 ;
+  
+  arg2 = &swig_obj[0];
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_std__vectorT_poly_t_std__allocatorT_poly_t_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "vector_polymorphism_iterator" "', argument " "1"" of type '" "std::vector< poly_t > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< poly_t > * >(argp1);
+  result = (swig::SwigPyIterator *)std_vector_Sl_poly_t_Sg__iterator(arg1,arg2);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_swig__SwigPyIterator, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_vector_polymorphism___nonzero__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< poly_t > *arg1 = (std::vector< poly_t > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  bool result;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_std__vectorT_poly_t_std__allocatorT_poly_t_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "vector_polymorphism___nonzero__" "', argument " "1"" of type '" "std::vector< poly_t > const *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< poly_t > * >(argp1);
+  result = (bool)std_vector_Sl_poly_t_Sg____nonzero__((std::vector< poly_t > const *)arg1);
+  resultobj = SWIG_From_bool(static_cast< bool >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_vector_polymorphism___bool__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< poly_t > *arg1 = (std::vector< poly_t > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  bool result;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_std__vectorT_poly_t_std__allocatorT_poly_t_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "vector_polymorphism___bool__" "', argument " "1"" of type '" "std::vector< poly_t > const *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< poly_t > * >(argp1);
+  result = (bool)std_vector_Sl_poly_t_Sg____bool__((std::vector< poly_t > const *)arg1);
+  resultobj = SWIG_From_bool(static_cast< bool >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_vector_polymorphism___len__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< poly_t > *arg1 = (std::vector< poly_t > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  std::vector< poly_t >::size_type result;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_std__vectorT_poly_t_std__allocatorT_poly_t_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "vector_polymorphism___len__" "', argument " "1"" of type '" "std::vector< poly_t > const *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< poly_t > * >(argp1);
+  result = std_vector_Sl_poly_t_Sg____len__((std::vector< poly_t > const *)arg1);
+  resultobj = SWIG_From_size_t(static_cast< size_t >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_vector_polymorphism_pop(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< poly_t > *arg1 = (std::vector< poly_t > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  std::vector< poly_t >::value_type result;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_std__vectorT_poly_t_std__allocatorT_poly_t_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "vector_polymorphism_pop" "', argument " "1"" of type '" "std::vector< poly_t > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< poly_t > * >(argp1);
+  try {
+    result = std_vector_Sl_poly_t_Sg__pop(arg1);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_exception_fail(SWIG_IndexError, (&_e)->what());
+  }
+  
+  resultobj = SWIG_NewPointerObj((new std::vector< poly_t >::value_type(static_cast< const std::vector< poly_t >::value_type& >(result))), SWIGTYPE_p_poly_t, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_vector_polymorphism___getslice__(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  std::vector< poly_t > *arg1 = (std::vector< poly_t > *) 0 ;
+  std::vector< poly_t >::difference_type arg2 ;
+  std::vector< poly_t >::difference_type arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  ptrdiff_t val2 ;
+  int ecode2 = 0 ;
+  ptrdiff_t val3 ;
+  int ecode3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "i",(char *) "j", NULL 
+  };
+  std::vector< poly_t,std::allocator< poly_t > > *result = 0 ;
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOO:vector_polymorphism___getslice__",kwnames,&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_poly_t_std__allocatorT_poly_t_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "vector_polymorphism___getslice__" "', argument " "1"" of type '" "std::vector< poly_t > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< poly_t > * >(argp1);
+  ecode2 = SWIG_AsVal_ptrdiff_t(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "vector_polymorphism___getslice__" "', argument " "2"" of type '" "std::vector< poly_t >::difference_type""'");
+  } 
+  arg2 = static_cast< std::vector< poly_t >::difference_type >(val2);
+  ecode3 = SWIG_AsVal_ptrdiff_t(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "vector_polymorphism___getslice__" "', argument " "3"" of type '" "std::vector< poly_t >::difference_type""'");
+  } 
+  arg3 = static_cast< std::vector< poly_t >::difference_type >(val3);
+  try {
+    result = (std::vector< poly_t,std::allocator< poly_t > > *)std_vector_Sl_poly_t_Sg____getslice__(arg1,arg2,arg3);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_exception_fail(SWIG_IndexError, (&_e)->what());
+  }
+  catch(std::invalid_argument &_e) {
+    SWIG_exception_fail(SWIG_ValueError, (&_e)->what());
+  }
+  
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__vectorT_poly_t_std__allocatorT_poly_t_t_t, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_vector_polymorphism___setslice__(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  std::vector< poly_t > *arg1 = (std::vector< poly_t > *) 0 ;
+  std::vector< poly_t >::difference_type arg2 ;
+  std::vector< poly_t >::difference_type arg3 ;
+  std::vector< poly_t,std::allocator< poly_t > > const &arg4_defvalue = std::vector< poly_t,std::allocator< poly_t > >() ;
+  std::vector< poly_t,std::allocator< poly_t > > *arg4 = (std::vector< poly_t,std::allocator< poly_t > > *) &arg4_defvalue ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  ptrdiff_t val2 ;
+  int ecode2 = 0 ;
+  ptrdiff_t val3 ;
+  int ecode3 = 0 ;
+  int res4 = SWIG_OLDOBJ ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "i",(char *) "j",(char *) "v", NULL 
+  };
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOO|O:vector_polymorphism___setslice__",kwnames,&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_poly_t_std__allocatorT_poly_t_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "vector_polymorphism___setslice__" "', argument " "1"" of type '" "std::vector< poly_t > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< poly_t > * >(argp1);
+  ecode2 = SWIG_AsVal_ptrdiff_t(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "vector_polymorphism___setslice__" "', argument " "2"" of type '" "std::vector< poly_t >::difference_type""'");
+  } 
+  arg2 = static_cast< std::vector< poly_t >::difference_type >(val2);
+  ecode3 = SWIG_AsVal_ptrdiff_t(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "vector_polymorphism___setslice__" "', argument " "3"" of type '" "std::vector< poly_t >::difference_type""'");
+  } 
+  arg3 = static_cast< std::vector< poly_t >::difference_type >(val3);
+  if (obj3) {
+    {
+      std::vector<poly_t,std::allocator< poly_t > > *ptr = (std::vector<poly_t,std::allocator< poly_t > > *)0;
+      res4 = swig::asptr(obj3, &ptr);
+      if (!SWIG_IsOK(res4)) {
+        SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "vector_polymorphism___setslice__" "', argument " "4"" of type '" "std::vector< poly_t,std::allocator< poly_t > > const &""'"); 
+      }
+      if (!ptr) {
+        SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "vector_polymorphism___setslice__" "', argument " "4"" of type '" "std::vector< poly_t,std::allocator< poly_t > > const &""'"); 
+      }
+      arg4 = ptr;
+    }
+  }
+  try {
+    std_vector_Sl_poly_t_Sg____setslice__(arg1,arg2,arg3,(std::vector< poly_t,std::allocator< poly_t > > const &)*arg4);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_exception_fail(SWIG_IndexError, (&_e)->what());
+  }
+  catch(std::invalid_argument &_e) {
+    SWIG_exception_fail(SWIG_ValueError, (&_e)->what());
+  }
+  
+  resultobj = SWIG_Py_Void();
+  if (SWIG_IsNewObj(res4)) delete arg4;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res4)) delete arg4;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_vector_polymorphism___delslice__(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  std::vector< poly_t > *arg1 = (std::vector< poly_t > *) 0 ;
+  std::vector< poly_t >::difference_type arg2 ;
+  std::vector< poly_t >::difference_type arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  ptrdiff_t val2 ;
+  int ecode2 = 0 ;
+  ptrdiff_t val3 ;
+  int ecode3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "i",(char *) "j", NULL 
+  };
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOO:vector_polymorphism___delslice__",kwnames,&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_poly_t_std__allocatorT_poly_t_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "vector_polymorphism___delslice__" "', argument " "1"" of type '" "std::vector< poly_t > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< poly_t > * >(argp1);
+  ecode2 = SWIG_AsVal_ptrdiff_t(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "vector_polymorphism___delslice__" "', argument " "2"" of type '" "std::vector< poly_t >::difference_type""'");
+  } 
+  arg2 = static_cast< std::vector< poly_t >::difference_type >(val2);
+  ecode3 = SWIG_AsVal_ptrdiff_t(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "vector_polymorphism___delslice__" "', argument " "3"" of type '" "std::vector< poly_t >::difference_type""'");
+  } 
+  arg3 = static_cast< std::vector< poly_t >::difference_type >(val3);
+  try {
+    std_vector_Sl_poly_t_Sg____delslice__(arg1,arg2,arg3);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_exception_fail(SWIG_IndexError, (&_e)->what());
+  }
+  catch(std::invalid_argument &_e) {
+    SWIG_exception_fail(SWIG_ValueError, (&_e)->what());
+  }
+  
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_vector_polymorphism___delitem____SWIG_0(PyObject *SWIGUNUSEDPARM(self), int nobjs, PyObject **swig_obj) {
+  PyObject *resultobj = 0;
+  std::vector< poly_t > *arg1 = (std::vector< poly_t > *) 0 ;
+  std::vector< poly_t >::difference_type arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  ptrdiff_t val2 ;
+  int ecode2 = 0 ;
+  
+  if ((nobjs < 2) || (nobjs > 2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_std__vectorT_poly_t_std__allocatorT_poly_t_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "vector_polymorphism___delitem__" "', argument " "1"" of type '" "std::vector< poly_t > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< poly_t > * >(argp1);
+  ecode2 = SWIG_AsVal_ptrdiff_t(swig_obj[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "vector_polymorphism___delitem__" "', argument " "2"" of type '" "std::vector< poly_t >::difference_type""'");
+  } 
+  arg2 = static_cast< std::vector< poly_t >::difference_type >(val2);
+  try {
+    std_vector_Sl_poly_t_Sg____delitem____SWIG_0(arg1,arg2);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_exception_fail(SWIG_IndexError, (&_e)->what());
+  }
+  
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_vector_polymorphism___getitem____SWIG_0(PyObject *SWIGUNUSEDPARM(self), int nobjs, PyObject **swig_obj) {
+  PyObject *resultobj = 0;
+  std::vector< poly_t > *arg1 = (std::vector< poly_t > *) 0 ;
+  PySliceObject *arg2 = (PySliceObject *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  std::vector< poly_t,std::allocator< poly_t > > *result = 0 ;
+  
+  if ((nobjs < 2) || (nobjs > 2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_std__vectorT_poly_t_std__allocatorT_poly_t_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "vector_polymorphism___getitem__" "', argument " "1"" of type '" "std::vector< poly_t > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< poly_t > * >(argp1);
+  {
+    if (!PySlice_Check(swig_obj[1])) {
+      SWIG_exception_fail(SWIG_ArgError(SWIG_TypeError), "in method '" "vector_polymorphism___getitem__" "', argument " "2"" of type '" "PySliceObject *""'");
+    }
+    arg2 = (PySliceObject *) swig_obj[1];
+  }
+  try {
+    result = (std::vector< poly_t,std::allocator< poly_t > > *)std_vector_Sl_poly_t_Sg____getitem____SWIG_0(arg1,arg2);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_exception_fail(SWIG_IndexError, (&_e)->what());
+  }
+  catch(std::invalid_argument &_e) {
+    SWIG_exception_fail(SWIG_ValueError, (&_e)->what());
+  }
+  
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__vectorT_poly_t_std__allocatorT_poly_t_t_t, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_vector_polymorphism___setitem____SWIG_0(PyObject *SWIGUNUSEDPARM(self), int nobjs, PyObject **swig_obj) {
+  PyObject *resultobj = 0;
+  std::vector< poly_t > *arg1 = (std::vector< poly_t > *) 0 ;
+  PySliceObject *arg2 = (PySliceObject *) 0 ;
+  std::vector< poly_t,std::allocator< poly_t > > *arg3 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int res3 = SWIG_OLDOBJ ;
+  
+  if ((nobjs < 3) || (nobjs > 3)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_std__vectorT_poly_t_std__allocatorT_poly_t_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "vector_polymorphism___setitem__" "', argument " "1"" of type '" "std::vector< poly_t > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< poly_t > * >(argp1);
+  {
+    if (!PySlice_Check(swig_obj[1])) {
+      SWIG_exception_fail(SWIG_ArgError(SWIG_TypeError), "in method '" "vector_polymorphism___setitem__" "', argument " "2"" of type '" "PySliceObject *""'");
+    }
+    arg2 = (PySliceObject *) swig_obj[1];
+  }
+  {
+    std::vector<poly_t,std::allocator< poly_t > > *ptr = (std::vector<poly_t,std::allocator< poly_t > > *)0;
+    res3 = swig::asptr(swig_obj[2], &ptr);
+    if (!SWIG_IsOK(res3)) {
+      SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "vector_polymorphism___setitem__" "', argument " "3"" of type '" "std::vector< poly_t,std::allocator< poly_t > > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "vector_polymorphism___setitem__" "', argument " "3"" of type '" "std::vector< poly_t,std::allocator< poly_t > > const &""'"); 
+    }
+    arg3 = ptr;
+  }
+  try {
+    std_vector_Sl_poly_t_Sg____setitem____SWIG_0(arg1,arg2,(std::vector< poly_t,std::allocator< poly_t > > const &)*arg3);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_exception_fail(SWIG_IndexError, (&_e)->what());
+  }
+  catch(std::invalid_argument &_e) {
+    SWIG_exception_fail(SWIG_ValueError, (&_e)->what());
+  }
+  
+  resultobj = SWIG_Py_Void();
+  if (SWIG_IsNewObj(res3)) delete arg3;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res3)) delete arg3;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_vector_polymorphism___setitem____SWIG_1(PyObject *SWIGUNUSEDPARM(self), int nobjs, PyObject **swig_obj) {
+  PyObject *resultobj = 0;
+  std::vector< poly_t > *arg1 = (std::vector< poly_t > *) 0 ;
+  PySliceObject *arg2 = (PySliceObject *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  
+  if ((nobjs < 2) || (nobjs > 2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_std__vectorT_poly_t_std__allocatorT_poly_t_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "vector_polymorphism___setitem__" "', argument " "1"" of type '" "std::vector< poly_t > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< poly_t > * >(argp1);
+  {
+    if (!PySlice_Check(swig_obj[1])) {
+      SWIG_exception_fail(SWIG_ArgError(SWIG_TypeError), "in method '" "vector_polymorphism___setitem__" "', argument " "2"" of type '" "PySliceObject *""'");
+    }
+    arg2 = (PySliceObject *) swig_obj[1];
+  }
+  try {
+    std_vector_Sl_poly_t_Sg____setitem____SWIG_1(arg1,arg2);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_exception_fail(SWIG_IndexError, (&_e)->what());
+  }
+  catch(std::invalid_argument &_e) {
+    SWIG_exception_fail(SWIG_ValueError, (&_e)->what());
+  }
+  
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_vector_polymorphism___delitem____SWIG_1(PyObject *SWIGUNUSEDPARM(self), int nobjs, PyObject **swig_obj) {
+  PyObject *resultobj = 0;
+  std::vector< poly_t > *arg1 = (std::vector< poly_t > *) 0 ;
+  PySliceObject *arg2 = (PySliceObject *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  
+  if ((nobjs < 2) || (nobjs > 2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_std__vectorT_poly_t_std__allocatorT_poly_t_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "vector_polymorphism___delitem__" "', argument " "1"" of type '" "std::vector< poly_t > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< poly_t > * >(argp1);
+  {
+    if (!PySlice_Check(swig_obj[1])) {
+      SWIG_exception_fail(SWIG_ArgError(SWIG_TypeError), "in method '" "vector_polymorphism___delitem__" "', argument " "2"" of type '" "PySliceObject *""'");
+    }
+    arg2 = (PySliceObject *) swig_obj[1];
+  }
+  try {
+    std_vector_Sl_poly_t_Sg____delitem____SWIG_1(arg1,arg2);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_exception_fail(SWIG_IndexError, (&_e)->what());
+  }
+  catch(std::invalid_argument &_e) {
+    SWIG_exception_fail(SWIG_ValueError, (&_e)->what());
+  }
+  
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_vector_polymorphism___delitem__(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[3];
+  
+  if (!(argc = SWIG_Python_UnpackTuple(args,"vector_polymorphism___delitem__",0,2,argv))) SWIG_fail;
+  --argc;
+  {
+    unsigned long _index = 0;
+    SWIG_TypeRank _rank = 0; 
+    if (argc == 2) {
+      SWIG_TypeRank _ranki = 0;
+      SWIG_TypeRank _rankm = 0;
+      SWIG_TypeRank _pi = 1;
+      int _v = 0;
+      {
+        int res = swig::asptr(argv[0], (std::vector<poly_t,std::allocator< poly_t > >**)(0));
+        _v = SWIG_CheckState(res);
+      }
+      if (!_v) goto check_1;
+      _ranki += _v*_pi;
+      _rankm += _pi;
+      _pi *= SWIG_MAXCASTRANK;
+      {
+        {
+          _v = PySlice_Check(argv[1]);
+        }
+      }
+      if (!_v) goto check_1;
+      _ranki += _v*_pi;
+      _rankm += _pi;
+      _pi *= SWIG_MAXCASTRANK;
+      if (!_index || (_ranki < _rank)) {
+        _rank = _ranki; _index = 1;
+        if (_rank == _rankm) goto dispatch;
+      }
+    }
+  check_1:
+    
+    if (argc == 2) {
+      SWIG_TypeRank _ranki = 0;
+      SWIG_TypeRank _rankm = 0;
+      SWIG_TypeRank _pi = 1;
+      int _v = 0;
+      {
+        int res = swig::asptr(argv[0], (std::vector<poly_t,std::allocator< poly_t > >**)(0));
+        _v = SWIG_CheckState(res);
+      }
+      if (!_v) goto check_2;
+      _ranki += _v*_pi;
+      _rankm += _pi;
+      _pi *= SWIG_MAXCASTRANK;
+      {
+        {
+          int res = SWIG_AsVal_ptrdiff_t(argv[1], NULL);
+          _v = SWIG_CheckState(res);
+        }
+      }
+      if (!_v) goto check_2;
+      _ranki += _v*_pi;
+      _rankm += _pi;
+      _pi *= SWIG_MAXCASTRANK;
+      if (!_index || (_ranki < _rank)) {
+        _rank = _ranki; _index = 2;
+        if (_rank == _rankm) goto dispatch;
+      }
+    }
+  check_2:
+    
+  dispatch:
+    switch(_index) {
+    case 1:
+      return _wrap_vector_polymorphism___delitem____SWIG_1(self, argc, argv);
+    case 2:
+      return _wrap_vector_polymorphism___delitem____SWIG_0(self, argc, argv);
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'vector_polymorphism___delitem__'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    std::vector< poly_t >::__delitem__(std::vector< poly_t >::difference_type)\n"
+    "    std::vector< poly_t >::__delitem__(PySliceObject *)\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_vector_polymorphism___getitem____SWIG_1(PyObject *SWIGUNUSEDPARM(self), int nobjs, PyObject **swig_obj) {
+  PyObject *resultobj = 0;
+  std::vector< poly_t > *arg1 = (std::vector< poly_t > *) 0 ;
+  std::vector< poly_t >::difference_type arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  ptrdiff_t val2 ;
+  int ecode2 = 0 ;
+  std::vector< poly_t >::value_type *result = 0 ;
+  
+  if ((nobjs < 2) || (nobjs > 2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_std__vectorT_poly_t_std__allocatorT_poly_t_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "vector_polymorphism___getitem__" "', argument " "1"" of type '" "std::vector< poly_t > const *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< poly_t > * >(argp1);
+  ecode2 = SWIG_AsVal_ptrdiff_t(swig_obj[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "vector_polymorphism___getitem__" "', argument " "2"" of type '" "std::vector< poly_t >::difference_type""'");
+  } 
+  arg2 = static_cast< std::vector< poly_t >::difference_type >(val2);
+  try {
+    result = (std::vector< poly_t >::value_type *) &std_vector_Sl_poly_t_Sg____getitem____SWIG_1((std::vector< poly_t > const *)arg1,arg2);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_exception_fail(SWIG_IndexError, (&_e)->what());
+  }
+  
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_poly_t, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_vector_polymorphism___getitem__(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[3];
+  
+  if (!(argc = SWIG_Python_UnpackTuple(args,"vector_polymorphism___getitem__",0,2,argv))) SWIG_fail;
+  --argc;
+  {
+    unsigned long _index = 0;
+    SWIG_TypeRank _rank = 0; 
+    if (argc == 2) {
+      SWIG_TypeRank _ranki = 0;
+      SWIG_TypeRank _rankm = 0;
+      SWIG_TypeRank _pi = 1;
+      int _v = 0;
+      {
+        int res = swig::asptr(argv[0], (std::vector<poly_t,std::allocator< poly_t > >**)(0));
+        _v = SWIG_CheckState(res);
+      }
+      if (!_v) goto check_1;
+      _ranki += _v*_pi;
+      _rankm += _pi;
+      _pi *= SWIG_MAXCASTRANK;
+      {
+        {
+          _v = PySlice_Check(argv[1]);
+        }
+      }
+      if (!_v) goto check_1;
+      _ranki += _v*_pi;
+      _rankm += _pi;
+      _pi *= SWIG_MAXCASTRANK;
+      if (!_index || (_ranki < _rank)) {
+        _rank = _ranki; _index = 1;
+        if (_rank == _rankm) goto dispatch;
+      }
+    }
+  check_1:
+    
+    if (argc == 2) {
+      SWIG_TypeRank _ranki = 0;
+      SWIG_TypeRank _rankm = 0;
+      SWIG_TypeRank _pi = 1;
+      int _v = 0;
+      {
+        int res = swig::asptr(argv[0], (std::vector<poly_t,std::allocator< poly_t > >**)(0));
+        _v = SWIG_CheckState(res);
+      }
+      if (!_v) goto check_2;
+      _ranki += _v*_pi;
+      _rankm += _pi;
+      _pi *= SWIG_MAXCASTRANK;
+      {
+        {
+          int res = SWIG_AsVal_ptrdiff_t(argv[1], NULL);
+          _v = SWIG_CheckState(res);
+        }
+      }
+      if (!_v) goto check_2;
+      _ranki += _v*_pi;
+      _rankm += _pi;
+      _pi *= SWIG_MAXCASTRANK;
+      if (!_index || (_ranki < _rank)) {
+        _rank = _ranki; _index = 2;
+        if (_rank == _rankm) goto dispatch;
+      }
+    }
+  check_2:
+    
+  dispatch:
+    switch(_index) {
+    case 1:
+      return _wrap_vector_polymorphism___getitem____SWIG_0(self, argc, argv);
+    case 2:
+      return _wrap_vector_polymorphism___getitem____SWIG_1(self, argc, argv);
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'vector_polymorphism___getitem__'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    std::vector< poly_t >::__getitem__(PySliceObject *)\n"
+    "    std::vector< poly_t >::__getitem__(std::vector< poly_t >::difference_type) const\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_vector_polymorphism___setitem____SWIG_2(PyObject *SWIGUNUSEDPARM(self), int nobjs, PyObject **swig_obj) {
+  PyObject *resultobj = 0;
+  std::vector< poly_t > *arg1 = (std::vector< poly_t > *) 0 ;
+  std::vector< poly_t >::difference_type arg2 ;
+  std::vector< poly_t >::value_type *arg3 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  ptrdiff_t val2 ;
+  int ecode2 = 0 ;
+  void *argp3 = 0 ;
+  int res3 = 0 ;
+  
+  if ((nobjs < 3) || (nobjs > 3)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_std__vectorT_poly_t_std__allocatorT_poly_t_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "vector_polymorphism___setitem__" "', argument " "1"" of type '" "std::vector< poly_t > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< poly_t > * >(argp1);
+  ecode2 = SWIG_AsVal_ptrdiff_t(swig_obj[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "vector_polymorphism___setitem__" "', argument " "2"" of type '" "std::vector< poly_t >::difference_type""'");
+  } 
+  arg2 = static_cast< std::vector< poly_t >::difference_type >(val2);
+  res3 = SWIG_ConvertPtr(swig_obj[2], &argp3, SWIGTYPE_p_poly_t,  0  | 0);
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "vector_polymorphism___setitem__" "', argument " "3"" of type '" "std::vector< poly_t >::value_type const &""'"); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "vector_polymorphism___setitem__" "', argument " "3"" of type '" "std::vector< poly_t >::value_type const &""'"); 
+  }
+  arg3 = reinterpret_cast< std::vector< poly_t >::value_type * >(argp3);
+  try {
+    std_vector_Sl_poly_t_Sg____setitem____SWIG_2(arg1,arg2,(poly_t const &)*arg3);
+  }
+  catch(std::out_of_range &_e) {
+    SWIG_exception_fail(SWIG_IndexError, (&_e)->what());
+  }
+  
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_vector_polymorphism___setitem__(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[4];
+  
+  if (!(argc = SWIG_Python_UnpackTuple(args,"vector_polymorphism___setitem__",0,3,argv))) SWIG_fail;
+  --argc;
+  {
+    unsigned long _index = 0;
+    SWIG_TypeRank _rank = 0; 
+    if (argc == 2) {
+      SWIG_TypeRank _ranki = 0;
+      SWIG_TypeRank _rankm = 0;
+      SWIG_TypeRank _pi = 1;
+      int _v = 0;
+      {
+        int res = swig::asptr(argv[0], (std::vector<poly_t,std::allocator< poly_t > >**)(0));
+        _v = SWIG_CheckState(res);
+      }
+      if (!_v) goto check_1;
+      _ranki += _v*_pi;
+      _rankm += _pi;
+      _pi *= SWIG_MAXCASTRANK;
+      {
+        {
+          _v = PySlice_Check(argv[1]);
+        }
+      }
+      if (!_v) goto check_1;
+      _ranki += _v*_pi;
+      _rankm += _pi;
+      _pi *= SWIG_MAXCASTRANK;
+      if (!_index || (_ranki < _rank)) {
+        _rank = _ranki; _index = 1;
+        if (_rank == _rankm) goto dispatch;
+      }
+    }
+  check_1:
+    
+    if (argc == 3) {
+      SWIG_TypeRank _ranki = 0;
+      SWIG_TypeRank _rankm = 0;
+      SWIG_TypeRank _pi = 1;
+      int _v = 0;
+      {
+        int res = swig::asptr(argv[0], (std::vector<poly_t,std::allocator< poly_t > >**)(0));
+        _v = SWIG_CheckState(res);
+      }
+      if (!_v) goto check_2;
+      _ranki += _v*_pi;
+      _rankm += _pi;
+      _pi *= SWIG_MAXCASTRANK;
+      {
+        {
+          _v = PySlice_Check(argv[1]);
+        }
+      }
+      if (!_v) goto check_2;
+      _ranki += _v*_pi;
+      _rankm += _pi;
+      _pi *= SWIG_MAXCASTRANK;
+      {
+        int res = swig::asptr(argv[2], (std::vector<poly_t,std::allocator< poly_t > >**)(0));
+        _v = SWIG_CheckState(res);
+      }
+      if (!_v) goto check_2;
+      _ranki += _v*_pi;
+      _rankm += _pi;
+      _pi *= SWIG_MAXCASTRANK;
+      if (!_index || (_ranki < _rank)) {
+        _rank = _ranki; _index = 2;
+        if (_rank == _rankm) goto dispatch;
+      }
+    }
+  check_2:
+    
+    if (argc == 3) {
+      SWIG_TypeRank _ranki = 0;
+      SWIG_TypeRank _rankm = 0;
+      SWIG_TypeRank _pi = 1;
+      int _v = 0;
+      {
+        int res = swig::asptr(argv[0], (std::vector<poly_t,std::allocator< poly_t > >**)(0));
+        _v = SWIG_CheckState(res);
+      }
+      if (!_v) goto check_3;
+      _ranki += _v*_pi;
+      _rankm += _pi;
+      _pi *= SWIG_MAXCASTRANK;
+      {
+        {
+          int res = SWIG_AsVal_ptrdiff_t(argv[1], NULL);
+          _v = SWIG_CheckState(res);
+        }
+      }
+      if (!_v) goto check_3;
+      _ranki += _v*_pi;
+      _rankm += _pi;
+      _pi *= SWIG_MAXCASTRANK;
+      {
+        int res = SWIG_ConvertPtr(argv[2], 0, SWIGTYPE_p_poly_t, 0);
+        _v = SWIG_CheckState(res);
+      }
+      if (!_v) goto check_3;
+      _ranki += _v*_pi;
+      _rankm += _pi;
+      _pi *= SWIG_MAXCASTRANK;
+      if (!_index || (_ranki < _rank)) {
+        _rank = _ranki; _index = 3;
+        if (_rank == _rankm) goto dispatch;
+      }
+    }
+  check_3:
+    
+  dispatch:
+    switch(_index) {
+    case 1:
+      return _wrap_vector_polymorphism___setitem____SWIG_1(self, argc, argv);
+    case 2:
+      return _wrap_vector_polymorphism___setitem____SWIG_0(self, argc, argv);
+    case 3:
+      return _wrap_vector_polymorphism___setitem____SWIG_2(self, argc, argv);
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'vector_polymorphism___setitem__'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    std::vector< poly_t >::__setitem__(PySliceObject *,std::vector< poly_t,std::allocator< poly_t > > const &)\n"
+    "    std::vector< poly_t >::__setitem__(PySliceObject *)\n"
+    "    std::vector< poly_t >::__setitem__(std::vector< poly_t >::difference_type,std::vector< poly_t >::value_type const &)\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_vector_polymorphism_append(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  std::vector< poly_t > *arg1 = (std::vector< poly_t > *) 0 ;
+  std::vector< poly_t >::value_type *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "x", NULL 
+  };
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OO:vector_polymorphism_append",kwnames,&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_poly_t_std__allocatorT_poly_t_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "vector_polymorphism_append" "', argument " "1"" of type '" "std::vector< poly_t > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< poly_t > * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_poly_t,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "vector_polymorphism_append" "', argument " "2"" of type '" "std::vector< poly_t >::value_type const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "vector_polymorphism_append" "', argument " "2"" of type '" "std::vector< poly_t >::value_type const &""'"); 
+  }
+  arg2 = reinterpret_cast< std::vector< poly_t >::value_type * >(argp2);
+  std_vector_Sl_poly_t_Sg__append(arg1,(poly_t const &)*arg2);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_vector_polymorphism__SWIG_0(PyObject *SWIGUNUSEDPARM(self), int nobjs, PyObject **SWIGUNUSEDPARM(swig_obj)) {
+  PyObject *resultobj = 0;
+  std::vector< poly_t > *result = 0 ;
+  
+  if ((nobjs < 0) || (nobjs > 0)) SWIG_fail;
+  result = (std::vector< poly_t > *)new std::vector< poly_t >();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__vectorT_poly_t_std__allocatorT_poly_t_t_t, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_vector_polymorphism__SWIG_1(PyObject *SWIGUNUSEDPARM(self), int nobjs, PyObject **swig_obj) {
+  PyObject *resultobj = 0;
+  std::vector< poly_t > *arg1 = 0 ;
+  int res1 = SWIG_OLDOBJ ;
+  std::vector< poly_t > *result = 0 ;
+  
+  if ((nobjs < 1) || (nobjs > 1)) SWIG_fail;
+  {
+    std::vector<poly_t,std::allocator< poly_t > > *ptr = (std::vector<poly_t,std::allocator< poly_t > > *)0;
+    res1 = swig::asptr(swig_obj[0], &ptr);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_vector_polymorphism" "', argument " "1"" of type '" "std::vector< poly_t > const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_vector_polymorphism" "', argument " "1"" of type '" "std::vector< poly_t > const &""'"); 
+    }
+    arg1 = ptr;
+  }
+  result = (std::vector< poly_t > *)new std::vector< poly_t >((std::vector< poly_t > const &)*arg1);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__vectorT_poly_t_std__allocatorT_poly_t_t_t, SWIG_POINTER_NEW |  0 );
+  if (SWIG_IsNewObj(res1)) delete arg1;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res1)) delete arg1;
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_vector_polymorphism_empty(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< poly_t > *arg1 = (std::vector< poly_t > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  bool result;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_std__vectorT_poly_t_std__allocatorT_poly_t_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "vector_polymorphism_empty" "', argument " "1"" of type '" "std::vector< poly_t > const *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< poly_t > * >(argp1);
+  result = (bool)((std::vector< poly_t > const *)arg1)->empty();
+  resultobj = SWIG_From_bool(static_cast< bool >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_vector_polymorphism_size(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< poly_t > *arg1 = (std::vector< poly_t > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  std::vector< poly_t >::size_type result;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_std__vectorT_poly_t_std__allocatorT_poly_t_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "vector_polymorphism_size" "', argument " "1"" of type '" "std::vector< poly_t > const *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< poly_t > * >(argp1);
+  result = ((std::vector< poly_t > const *)arg1)->size();
+  resultobj = SWIG_From_size_t(static_cast< size_t >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_vector_polymorphism_clear(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< poly_t > *arg1 = (std::vector< poly_t > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_std__vectorT_poly_t_std__allocatorT_poly_t_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "vector_polymorphism_clear" "', argument " "1"" of type '" "std::vector< poly_t > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< poly_t > * >(argp1);
+  (arg1)->clear();
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_vector_polymorphism_swap(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  std::vector< poly_t > *arg1 = (std::vector< poly_t > *) 0 ;
+  std::vector< poly_t > *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "v", NULL 
+  };
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OO:vector_polymorphism_swap",kwnames,&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_poly_t_std__allocatorT_poly_t_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "vector_polymorphism_swap" "', argument " "1"" of type '" "std::vector< poly_t > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< poly_t > * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_std__vectorT_poly_t_std__allocatorT_poly_t_t_t,  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "vector_polymorphism_swap" "', argument " "2"" of type '" "std::vector< poly_t > &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "vector_polymorphism_swap" "', argument " "2"" of type '" "std::vector< poly_t > &""'"); 
+  }
+  arg2 = reinterpret_cast< std::vector< poly_t > * >(argp2);
+  (arg1)->swap(*arg2);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_vector_polymorphism_get_allocator(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< poly_t > *arg1 = (std::vector< poly_t > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  SwigValueWrapper< std::allocator< poly_t > > result;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_std__vectorT_poly_t_std__allocatorT_poly_t_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "vector_polymorphism_get_allocator" "', argument " "1"" of type '" "std::vector< poly_t > const *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< poly_t > * >(argp1);
+  result = ((std::vector< poly_t > const *)arg1)->get_allocator();
+  resultobj = SWIG_NewPointerObj((new std::vector< poly_t >::allocator_type(static_cast< const std::vector< poly_t >::allocator_type& >(result))), SWIGTYPE_p_std__allocatorT_poly_t_t, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_vector_polymorphism_begin(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< poly_t > *arg1 = (std::vector< poly_t > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  std::vector< poly_t >::iterator result;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_std__vectorT_poly_t_std__allocatorT_poly_t_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "vector_polymorphism_begin" "', argument " "1"" of type '" "std::vector< poly_t > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< poly_t > * >(argp1);
+  result = (arg1)->begin();
+  resultobj = SWIG_NewPointerObj(swig::make_output_iterator(static_cast< const std::vector< poly_t >::iterator & >(result)),
+    swig::SwigPyIterator::descriptor(),SWIG_POINTER_OWN);
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_vector_polymorphism_end(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< poly_t > *arg1 = (std::vector< poly_t > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  std::vector< poly_t >::iterator result;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_std__vectorT_poly_t_std__allocatorT_poly_t_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "vector_polymorphism_end" "', argument " "1"" of type '" "std::vector< poly_t > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< poly_t > * >(argp1);
+  result = (arg1)->end();
+  resultobj = SWIG_NewPointerObj(swig::make_output_iterator(static_cast< const std::vector< poly_t >::iterator & >(result)),
+    swig::SwigPyIterator::descriptor(),SWIG_POINTER_OWN);
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_vector_polymorphism_rbegin(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< poly_t > *arg1 = (std::vector< poly_t > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  std::vector< poly_t >::reverse_iterator result;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_std__vectorT_poly_t_std__allocatorT_poly_t_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "vector_polymorphism_rbegin" "', argument " "1"" of type '" "std::vector< poly_t > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< poly_t > * >(argp1);
+  result = (arg1)->rbegin();
+  resultobj = SWIG_NewPointerObj(swig::make_output_iterator(static_cast< const std::vector< poly_t >::reverse_iterator & >(result)),
+    swig::SwigPyIterator::descriptor(),SWIG_POINTER_OWN);
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_vector_polymorphism_rend(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< poly_t > *arg1 = (std::vector< poly_t > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  std::vector< poly_t >::reverse_iterator result;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_std__vectorT_poly_t_std__allocatorT_poly_t_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "vector_polymorphism_rend" "', argument " "1"" of type '" "std::vector< poly_t > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< poly_t > * >(argp1);
+  result = (arg1)->rend();
+  resultobj = SWIG_NewPointerObj(swig::make_output_iterator(static_cast< const std::vector< poly_t >::reverse_iterator & >(result)),
+    swig::SwigPyIterator::descriptor(),SWIG_POINTER_OWN);
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_vector_polymorphism__SWIG_2(PyObject *SWIGUNUSEDPARM(self), int nobjs, PyObject **swig_obj) {
+  PyObject *resultobj = 0;
+  std::vector< poly_t >::size_type arg1 ;
+  size_t val1 ;
+  int ecode1 = 0 ;
+  std::vector< poly_t > *result = 0 ;
+  
+  if ((nobjs < 1) || (nobjs > 1)) SWIG_fail;
+  ecode1 = SWIG_AsVal_size_t(swig_obj[0], &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "new_vector_polymorphism" "', argument " "1"" of type '" "std::vector< poly_t >::size_type""'");
+  } 
+  arg1 = static_cast< std::vector< poly_t >::size_type >(val1);
+  result = (std::vector< poly_t > *)new std::vector< poly_t >(arg1);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__vectorT_poly_t_std__allocatorT_poly_t_t_t, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_vector_polymorphism_pop_back(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< poly_t > *arg1 = (std::vector< poly_t > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_std__vectorT_poly_t_std__allocatorT_poly_t_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "vector_polymorphism_pop_back" "', argument " "1"" of type '" "std::vector< poly_t > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< poly_t > * >(argp1);
+  (arg1)->pop_back();
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_vector_polymorphism_resize__SWIG_0(PyObject *SWIGUNUSEDPARM(self), int nobjs, PyObject **swig_obj) {
+  PyObject *resultobj = 0;
+  std::vector< poly_t > *arg1 = (std::vector< poly_t > *) 0 ;
+  std::vector< poly_t >::size_type arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  size_t val2 ;
+  int ecode2 = 0 ;
+  
+  if ((nobjs < 2) || (nobjs > 2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_std__vectorT_poly_t_std__allocatorT_poly_t_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "vector_polymorphism_resize" "', argument " "1"" of type '" "std::vector< poly_t > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< poly_t > * >(argp1);
+  ecode2 = SWIG_AsVal_size_t(swig_obj[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "vector_polymorphism_resize" "', argument " "2"" of type '" "std::vector< poly_t >::size_type""'");
+  } 
+  arg2 = static_cast< std::vector< poly_t >::size_type >(val2);
+  (arg1)->resize(arg2);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_vector_polymorphism_erase__SWIG_0(PyObject *SWIGUNUSEDPARM(self), int nobjs, PyObject **swig_obj) {
+  PyObject *resultobj = 0;
+  std::vector< poly_t > *arg1 = (std::vector< poly_t > *) 0 ;
+  std::vector< poly_t >::iterator arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  swig::SwigPyIterator *iter2 = 0 ;
+  int res2 ;
+  std::vector< poly_t >::iterator result;
+  
+  if ((nobjs < 2) || (nobjs > 2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_std__vectorT_poly_t_std__allocatorT_poly_t_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "vector_polymorphism_erase" "', argument " "1"" of type '" "std::vector< poly_t > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< poly_t > * >(argp1);
+  res2 = SWIG_ConvertPtr(swig_obj[1], SWIG_as_voidptrptr(&iter2), swig::SwigPyIterator::descriptor(), 0);
+  if (!SWIG_IsOK(res2) || !iter2) {
+    SWIG_exception_fail(SWIG_ArgError(SWIG_TypeError), "in method '" "vector_polymorphism_erase" "', argument " "2"" of type '" "std::vector< poly_t >::iterator""'");
+  } else {
+    swig::SwigPyIterator_T<std::vector< poly_t >::iterator > *iter_t = dynamic_cast<swig::SwigPyIterator_T<std::vector< poly_t >::iterator > *>(iter2);
+    if (iter_t) {
+      arg2 = iter_t->get_current();
+    } else {
+      SWIG_exception_fail(SWIG_ArgError(SWIG_TypeError), "in method '" "vector_polymorphism_erase" "', argument " "2"" of type '" "std::vector< poly_t >::iterator""'");
+    }
+  }
+  result = (arg1)->erase(arg2);
+  resultobj = SWIG_NewPointerObj(swig::make_output_iterator(static_cast< const std::vector< poly_t >::iterator & >(result)),
+    swig::SwigPyIterator::descriptor(),SWIG_POINTER_OWN);
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_vector_polymorphism_erase__SWIG_1(PyObject *SWIGUNUSEDPARM(self), int nobjs, PyObject **swig_obj) {
+  PyObject *resultobj = 0;
+  std::vector< poly_t > *arg1 = (std::vector< poly_t > *) 0 ;
+  std::vector< poly_t >::iterator arg2 ;
+  std::vector< poly_t >::iterator arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  swig::SwigPyIterator *iter2 = 0 ;
+  int res2 ;
+  swig::SwigPyIterator *iter3 = 0 ;
+  int res3 ;
+  std::vector< poly_t >::iterator result;
+  
+  if ((nobjs < 3) || (nobjs > 3)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_std__vectorT_poly_t_std__allocatorT_poly_t_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "vector_polymorphism_erase" "', argument " "1"" of type '" "std::vector< poly_t > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< poly_t > * >(argp1);
+  res2 = SWIG_ConvertPtr(swig_obj[1], SWIG_as_voidptrptr(&iter2), swig::SwigPyIterator::descriptor(), 0);
+  if (!SWIG_IsOK(res2) || !iter2) {
+    SWIG_exception_fail(SWIG_ArgError(SWIG_TypeError), "in method '" "vector_polymorphism_erase" "', argument " "2"" of type '" "std::vector< poly_t >::iterator""'");
+  } else {
+    swig::SwigPyIterator_T<std::vector< poly_t >::iterator > *iter_t = dynamic_cast<swig::SwigPyIterator_T<std::vector< poly_t >::iterator > *>(iter2);
+    if (iter_t) {
+      arg2 = iter_t->get_current();
+    } else {
+      SWIG_exception_fail(SWIG_ArgError(SWIG_TypeError), "in method '" "vector_polymorphism_erase" "', argument " "2"" of type '" "std::vector< poly_t >::iterator""'");
+    }
+  }
+  res3 = SWIG_ConvertPtr(swig_obj[2], SWIG_as_voidptrptr(&iter3), swig::SwigPyIterator::descriptor(), 0);
+  if (!SWIG_IsOK(res3) || !iter3) {
+    SWIG_exception_fail(SWIG_ArgError(SWIG_TypeError), "in method '" "vector_polymorphism_erase" "', argument " "3"" of type '" "std::vector< poly_t >::iterator""'");
+  } else {
+    swig::SwigPyIterator_T<std::vector< poly_t >::iterator > *iter_t = dynamic_cast<swig::SwigPyIterator_T<std::vector< poly_t >::iterator > *>(iter3);
+    if (iter_t) {
+      arg3 = iter_t->get_current();
+    } else {
+      SWIG_exception_fail(SWIG_ArgError(SWIG_TypeError), "in method '" "vector_polymorphism_erase" "', argument " "3"" of type '" "std::vector< poly_t >::iterator""'");
+    }
+  }
+  result = (arg1)->erase(arg2,arg3);
+  resultobj = SWIG_NewPointerObj(swig::make_output_iterator(static_cast< const std::vector< poly_t >::iterator & >(result)),
+    swig::SwigPyIterator::descriptor(),SWIG_POINTER_OWN);
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_vector_polymorphism_erase(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[4];
+  
+  if (!(argc = SWIG_Python_UnpackTuple(args,"vector_polymorphism_erase",0,3,argv))) SWIG_fail;
+  --argc;
+  {
+    unsigned long _index = 0;
+    SWIG_TypeRank _rank = 0; 
+    if (argc == 2) {
+      SWIG_TypeRank _ranki = 0;
+      SWIG_TypeRank _rankm = 0;
+      SWIG_TypeRank _pi = 1;
+      int _v = 0;
+      {
+        int res = swig::asptr(argv[0], (std::vector<poly_t,std::allocator< poly_t > >**)(0));
+        _v = SWIG_CheckState(res);
+      }
+      if (!_v) goto check_1;
+      _ranki += _v*_pi;
+      _rankm += _pi;
+      _pi *= SWIG_MAXCASTRANK;
+      {
+        swig::SwigPyIterator *iter = 0;
+        int res = SWIG_ConvertPtr(argv[1], SWIG_as_voidptrptr(&iter), swig::SwigPyIterator::descriptor(), 0);
+        _v = (SWIG_IsOK(res) && iter && (dynamic_cast<swig::SwigPyIterator_T<std::vector< poly_t >::iterator > *>(iter) != 0));
+      }
+      if (!_v) goto check_1;
+      _ranki += _v*_pi;
+      _rankm += _pi;
+      _pi *= SWIG_MAXCASTRANK;
+      if (!_index || (_ranki < _rank)) {
+        _rank = _ranki; _index = 1;
+        if (_rank == _rankm) goto dispatch;
+      }
+    }
+  check_1:
+    
+    if (argc == 3) {
+      SWIG_TypeRank _ranki = 0;
+      SWIG_TypeRank _rankm = 0;
+      SWIG_TypeRank _pi = 1;
+      int _v = 0;
+      {
+        int res = swig::asptr(argv[0], (std::vector<poly_t,std::allocator< poly_t > >**)(0));
+        _v = SWIG_CheckState(res);
+      }
+      if (!_v) goto check_2;
+      _ranki += _v*_pi;
+      _rankm += _pi;
+      _pi *= SWIG_MAXCASTRANK;
+      {
+        swig::SwigPyIterator *iter = 0;
+        int res = SWIG_ConvertPtr(argv[1], SWIG_as_voidptrptr(&iter), swig::SwigPyIterator::descriptor(), 0);
+        _v = (SWIG_IsOK(res) && iter && (dynamic_cast<swig::SwigPyIterator_T<std::vector< poly_t >::iterator > *>(iter) != 0));
+      }
+      if (!_v) goto check_2;
+      _ranki += _v*_pi;
+      _rankm += _pi;
+      _pi *= SWIG_MAXCASTRANK;
+      {
+        swig::SwigPyIterator *iter = 0;
+        int res = SWIG_ConvertPtr(argv[2], SWIG_as_voidptrptr(&iter), swig::SwigPyIterator::descriptor(), 0);
+        _v = (SWIG_IsOK(res) && iter && (dynamic_cast<swig::SwigPyIterator_T<std::vector< poly_t >::iterator > *>(iter) != 0));
+      }
+      if (!_v) goto check_2;
+      _ranki += _v*_pi;
+      _rankm += _pi;
+      _pi *= SWIG_MAXCASTRANK;
+      if (!_index || (_ranki < _rank)) {
+        _rank = _ranki; _index = 2;
+        if (_rank == _rankm) goto dispatch;
+      }
+    }
+  check_2:
+    
+  dispatch:
+    switch(_index) {
+    case 1:
+      return _wrap_vector_polymorphism_erase__SWIG_0(self, argc, argv);
+    case 2:
+      return _wrap_vector_polymorphism_erase__SWIG_1(self, argc, argv);
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'vector_polymorphism_erase'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    std::vector< poly_t >::erase(std::vector< poly_t >::iterator)\n"
+    "    std::vector< poly_t >::erase(std::vector< poly_t >::iterator,std::vector< poly_t >::iterator)\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_vector_polymorphism__SWIG_3(PyObject *SWIGUNUSEDPARM(self), int nobjs, PyObject **swig_obj) {
+  PyObject *resultobj = 0;
+  std::vector< poly_t >::size_type arg1 ;
+  std::vector< poly_t >::value_type *arg2 = 0 ;
+  size_t val1 ;
+  int ecode1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  std::vector< poly_t > *result = 0 ;
+  
+  if ((nobjs < 2) || (nobjs > 2)) SWIG_fail;
+  ecode1 = SWIG_AsVal_size_t(swig_obj[0], &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "new_vector_polymorphism" "', argument " "1"" of type '" "std::vector< poly_t >::size_type""'");
+  } 
+  arg1 = static_cast< std::vector< poly_t >::size_type >(val1);
+  res2 = SWIG_ConvertPtr(swig_obj[1], &argp2, SWIGTYPE_p_poly_t,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "new_vector_polymorphism" "', argument " "2"" of type '" "std::vector< poly_t >::value_type const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_vector_polymorphism" "', argument " "2"" of type '" "std::vector< poly_t >::value_type const &""'"); 
+  }
+  arg2 = reinterpret_cast< std::vector< poly_t >::value_type * >(argp2);
+  result = (std::vector< poly_t > *)new std::vector< poly_t >(arg1,(std::vector< poly_t >::value_type const &)*arg2);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__vectorT_poly_t_std__allocatorT_poly_t_t_t, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_vector_polymorphism(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[3];
+  
+  if (!(argc = SWIG_Python_UnpackTuple(args,"new_vector_polymorphism",0,2,argv))) SWIG_fail;
+  --argc;
+  {
+    unsigned long _index = 0;
+    SWIG_TypeRank _rank = 0; 
+    if (argc == 0) {
+      SWIG_TypeRank _ranki = 0;
+      SWIG_TypeRank _rankm = 0;
+      if (!_index || (_ranki < _rank)) {
+        _rank = _ranki; _index = 1;
+        if (_rank == _rankm) goto dispatch;
+      }
+    }
+    if (argc == 1) {
+      SWIG_TypeRank _ranki = 0;
+      SWIG_TypeRank _rankm = 0;
+      SWIG_TypeRank _pi = 1;
+      int _v = 0;
+      {
+        {
+          int res = SWIG_AsVal_size_t(argv[0], NULL);
+          _v = SWIG_CheckState(res);
+        }
+      }
+      if (!_v) goto check_2;
+      _ranki += _v*_pi;
+      _rankm += _pi;
+      _pi *= SWIG_MAXCASTRANK;
+      if (!_index || (_ranki < _rank)) {
+        _rank = _ranki; _index = 2;
+        if (_rank == _rankm) goto dispatch;
+      }
+    }
+  check_2:
+    
+    if (argc == 1) {
+      SWIG_TypeRank _ranki = 0;
+      SWIG_TypeRank _rankm = 0;
+      SWIG_TypeRank _pi = 1;
+      int _v = 0;
+      {
+        int res = swig::asptr(argv[0], (std::vector<poly_t,std::allocator< poly_t > >**)(0));
+        _v = SWIG_CheckState(res);
+      }
+      if (!_v) goto check_3;
+      _ranki += _v*_pi;
+      _rankm += _pi;
+      _pi *= SWIG_MAXCASTRANK;
+      if (!_index || (_ranki < _rank)) {
+        _rank = _ranki; _index = 3;
+        if (_rank == _rankm) goto dispatch;
+      }
+    }
+  check_3:
+    
+    if (argc == 2) {
+      SWIG_TypeRank _ranki = 0;
+      SWIG_TypeRank _rankm = 0;
+      SWIG_TypeRank _pi = 1;
+      int _v = 0;
+      {
+        {
+          int res = SWIG_AsVal_size_t(argv[0], NULL);
+          _v = SWIG_CheckState(res);
+        }
+      }
+      if (!_v) goto check_4;
+      _ranki += _v*_pi;
+      _rankm += _pi;
+      _pi *= SWIG_MAXCASTRANK;
+      {
+        int res = SWIG_ConvertPtr(argv[1], 0, SWIGTYPE_p_poly_t, 0);
+        _v = SWIG_CheckState(res);
+      }
+      if (!_v) goto check_4;
+      _ranki += _v*_pi;
+      _rankm += _pi;
+      _pi *= SWIG_MAXCASTRANK;
+      if (!_index || (_ranki < _rank)) {
+        _rank = _ranki; _index = 4;
+        if (_rank == _rankm) goto dispatch;
+      }
+    }
+  check_4:
+    
+  dispatch:
+    switch(_index) {
+    case 1:
+      return _wrap_new_vector_polymorphism__SWIG_0(self, argc, argv);
+    case 2:
+      return _wrap_new_vector_polymorphism__SWIG_2(self, argc, argv);
+    case 3:
+      return _wrap_new_vector_polymorphism__SWIG_1(self, argc, argv);
+    case 4:
+      return _wrap_new_vector_polymorphism__SWIG_3(self, argc, argv);
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'new_vector_polymorphism'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    std::vector< poly_t >::vector()\n"
+    "    std::vector< poly_t >::vector(std::vector< poly_t > const &)\n"
+    "    std::vector< poly_t >::vector(std::vector< poly_t >::size_type)\n"
+    "    std::vector< poly_t >::vector(std::vector< poly_t >::size_type,std::vector< poly_t >::value_type const &)\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_vector_polymorphism_push_back(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  std::vector< poly_t > *arg1 = (std::vector< poly_t > *) 0 ;
+  std::vector< poly_t >::value_type *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "x", NULL 
+  };
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OO:vector_polymorphism_push_back",kwnames,&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_poly_t_std__allocatorT_poly_t_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "vector_polymorphism_push_back" "', argument " "1"" of type '" "std::vector< poly_t > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< poly_t > * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_poly_t,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "vector_polymorphism_push_back" "', argument " "2"" of type '" "std::vector< poly_t >::value_type const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "vector_polymorphism_push_back" "', argument " "2"" of type '" "std::vector< poly_t >::value_type const &""'"); 
+  }
+  arg2 = reinterpret_cast< std::vector< poly_t >::value_type * >(argp2);
+  (arg1)->push_back((std::vector< poly_t >::value_type const &)*arg2);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_vector_polymorphism_front(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< poly_t > *arg1 = (std::vector< poly_t > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  std::vector< poly_t >::value_type *result = 0 ;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_std__vectorT_poly_t_std__allocatorT_poly_t_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "vector_polymorphism_front" "', argument " "1"" of type '" "std::vector< poly_t > const *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< poly_t > * >(argp1);
+  result = (std::vector< poly_t >::value_type *) &((std::vector< poly_t > const *)arg1)->front();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_poly_t, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_vector_polymorphism_back(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< poly_t > *arg1 = (std::vector< poly_t > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  std::vector< poly_t >::value_type *result = 0 ;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_std__vectorT_poly_t_std__allocatorT_poly_t_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "vector_polymorphism_back" "', argument " "1"" of type '" "std::vector< poly_t > const *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< poly_t > * >(argp1);
+  result = (std::vector< poly_t >::value_type *) &((std::vector< poly_t > const *)arg1)->back();
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_poly_t, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_vector_polymorphism_assign(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  std::vector< poly_t > *arg1 = (std::vector< poly_t > *) 0 ;
+  std::vector< poly_t >::size_type arg2 ;
+  std::vector< poly_t >::value_type *arg3 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  size_t val2 ;
+  int ecode2 = 0 ;
+  void *argp3 = 0 ;
+  int res3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "n",(char *) "x", NULL 
+  };
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OOO:vector_polymorphism_assign",kwnames,&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_poly_t_std__allocatorT_poly_t_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "vector_polymorphism_assign" "', argument " "1"" of type '" "std::vector< poly_t > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< poly_t > * >(argp1);
+  ecode2 = SWIG_AsVal_size_t(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "vector_polymorphism_assign" "', argument " "2"" of type '" "std::vector< poly_t >::size_type""'");
+  } 
+  arg2 = static_cast< std::vector< poly_t >::size_type >(val2);
+  res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_poly_t,  0  | 0);
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "vector_polymorphism_assign" "', argument " "3"" of type '" "std::vector< poly_t >::value_type const &""'"); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "vector_polymorphism_assign" "', argument " "3"" of type '" "std::vector< poly_t >::value_type const &""'"); 
+  }
+  arg3 = reinterpret_cast< std::vector< poly_t >::value_type * >(argp3);
+  (arg1)->assign(arg2,(std::vector< poly_t >::value_type const &)*arg3);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_vector_polymorphism_resize__SWIG_1(PyObject *SWIGUNUSEDPARM(self), int nobjs, PyObject **swig_obj) {
+  PyObject *resultobj = 0;
+  std::vector< poly_t > *arg1 = (std::vector< poly_t > *) 0 ;
+  std::vector< poly_t >::size_type arg2 ;
+  std::vector< poly_t >::value_type *arg3 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  size_t val2 ;
+  int ecode2 = 0 ;
+  void *argp3 = 0 ;
+  int res3 = 0 ;
+  
+  if ((nobjs < 3) || (nobjs > 3)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_std__vectorT_poly_t_std__allocatorT_poly_t_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "vector_polymorphism_resize" "', argument " "1"" of type '" "std::vector< poly_t > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< poly_t > * >(argp1);
+  ecode2 = SWIG_AsVal_size_t(swig_obj[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "vector_polymorphism_resize" "', argument " "2"" of type '" "std::vector< poly_t >::size_type""'");
+  } 
+  arg2 = static_cast< std::vector< poly_t >::size_type >(val2);
+  res3 = SWIG_ConvertPtr(swig_obj[2], &argp3, SWIGTYPE_p_poly_t,  0  | 0);
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "vector_polymorphism_resize" "', argument " "3"" of type '" "std::vector< poly_t >::value_type const &""'"); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "vector_polymorphism_resize" "', argument " "3"" of type '" "std::vector< poly_t >::value_type const &""'"); 
+  }
+  arg3 = reinterpret_cast< std::vector< poly_t >::value_type * >(argp3);
+  (arg1)->resize(arg2,(std::vector< poly_t >::value_type const &)*arg3);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_vector_polymorphism_resize(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[4];
+  
+  if (!(argc = SWIG_Python_UnpackTuple(args,"vector_polymorphism_resize",0,3,argv))) SWIG_fail;
+  --argc;
+  {
+    unsigned long _index = 0;
+    SWIG_TypeRank _rank = 0; 
+    if (argc == 2) {
+      SWIG_TypeRank _ranki = 0;
+      SWIG_TypeRank _rankm = 0;
+      SWIG_TypeRank _pi = 1;
+      int _v = 0;
+      {
+        int res = swig::asptr(argv[0], (std::vector<poly_t,std::allocator< poly_t > >**)(0));
+        _v = SWIG_CheckState(res);
+      }
+      if (!_v) goto check_1;
+      _ranki += _v*_pi;
+      _rankm += _pi;
+      _pi *= SWIG_MAXCASTRANK;
+      {
+        {
+          int res = SWIG_AsVal_size_t(argv[1], NULL);
+          _v = SWIG_CheckState(res);
+        }
+      }
+      if (!_v) goto check_1;
+      _ranki += _v*_pi;
+      _rankm += _pi;
+      _pi *= SWIG_MAXCASTRANK;
+      if (!_index || (_ranki < _rank)) {
+        _rank = _ranki; _index = 1;
+        if (_rank == _rankm) goto dispatch;
+      }
+    }
+  check_1:
+    
+    if (argc == 3) {
+      SWIG_TypeRank _ranki = 0;
+      SWIG_TypeRank _rankm = 0;
+      SWIG_TypeRank _pi = 1;
+      int _v = 0;
+      {
+        int res = swig::asptr(argv[0], (std::vector<poly_t,std::allocator< poly_t > >**)(0));
+        _v = SWIG_CheckState(res);
+      }
+      if (!_v) goto check_2;
+      _ranki += _v*_pi;
+      _rankm += _pi;
+      _pi *= SWIG_MAXCASTRANK;
+      {
+        {
+          int res = SWIG_AsVal_size_t(argv[1], NULL);
+          _v = SWIG_CheckState(res);
+        }
+      }
+      if (!_v) goto check_2;
+      _ranki += _v*_pi;
+      _rankm += _pi;
+      _pi *= SWIG_MAXCASTRANK;
+      {
+        int res = SWIG_ConvertPtr(argv[2], 0, SWIGTYPE_p_poly_t, 0);
+        _v = SWIG_CheckState(res);
+      }
+      if (!_v) goto check_2;
+      _ranki += _v*_pi;
+      _rankm += _pi;
+      _pi *= SWIG_MAXCASTRANK;
+      if (!_index || (_ranki < _rank)) {
+        _rank = _ranki; _index = 2;
+        if (_rank == _rankm) goto dispatch;
+      }
+    }
+  check_2:
+    
+  dispatch:
+    switch(_index) {
+    case 1:
+      return _wrap_vector_polymorphism_resize__SWIG_0(self, argc, argv);
+    case 2:
+      return _wrap_vector_polymorphism_resize__SWIG_1(self, argc, argv);
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'vector_polymorphism_resize'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    std::vector< poly_t >::resize(std::vector< poly_t >::size_type)\n"
+    "    std::vector< poly_t >::resize(std::vector< poly_t >::size_type,std::vector< poly_t >::value_type const &)\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_vector_polymorphism_insert__SWIG_0(PyObject *SWIGUNUSEDPARM(self), int nobjs, PyObject **swig_obj) {
+  PyObject *resultobj = 0;
+  std::vector< poly_t > *arg1 = (std::vector< poly_t > *) 0 ;
+  std::vector< poly_t >::iterator arg2 ;
+  std::vector< poly_t >::value_type *arg3 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  swig::SwigPyIterator *iter2 = 0 ;
+  int res2 ;
+  void *argp3 = 0 ;
+  int res3 = 0 ;
+  std::vector< poly_t >::iterator result;
+  
+  if ((nobjs < 3) || (nobjs > 3)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_std__vectorT_poly_t_std__allocatorT_poly_t_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "vector_polymorphism_insert" "', argument " "1"" of type '" "std::vector< poly_t > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< poly_t > * >(argp1);
+  res2 = SWIG_ConvertPtr(swig_obj[1], SWIG_as_voidptrptr(&iter2), swig::SwigPyIterator::descriptor(), 0);
+  if (!SWIG_IsOK(res2) || !iter2) {
+    SWIG_exception_fail(SWIG_ArgError(SWIG_TypeError), "in method '" "vector_polymorphism_insert" "', argument " "2"" of type '" "std::vector< poly_t >::iterator""'");
+  } else {
+    swig::SwigPyIterator_T<std::vector< poly_t >::iterator > *iter_t = dynamic_cast<swig::SwigPyIterator_T<std::vector< poly_t >::iterator > *>(iter2);
+    if (iter_t) {
+      arg2 = iter_t->get_current();
+    } else {
+      SWIG_exception_fail(SWIG_ArgError(SWIG_TypeError), "in method '" "vector_polymorphism_insert" "', argument " "2"" of type '" "std::vector< poly_t >::iterator""'");
+    }
+  }
+  res3 = SWIG_ConvertPtr(swig_obj[2], &argp3, SWIGTYPE_p_poly_t,  0  | 0);
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "vector_polymorphism_insert" "', argument " "3"" of type '" "std::vector< poly_t >::value_type const &""'"); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "vector_polymorphism_insert" "', argument " "3"" of type '" "std::vector< poly_t >::value_type const &""'"); 
+  }
+  arg3 = reinterpret_cast< std::vector< poly_t >::value_type * >(argp3);
+  result = (arg1)->insert(arg2,(std::vector< poly_t >::value_type const &)*arg3);
+  resultobj = SWIG_NewPointerObj(swig::make_output_iterator(static_cast< const std::vector< poly_t >::iterator & >(result)),
+    swig::SwigPyIterator::descriptor(),SWIG_POINTER_OWN);
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_vector_polymorphism_insert__SWIG_1(PyObject *SWIGUNUSEDPARM(self), int nobjs, PyObject **swig_obj) {
+  PyObject *resultobj = 0;
+  std::vector< poly_t > *arg1 = (std::vector< poly_t > *) 0 ;
+  std::vector< poly_t >::iterator arg2 ;
+  std::vector< poly_t >::size_type arg3 ;
+  std::vector< poly_t >::value_type *arg4 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  swig::SwigPyIterator *iter2 = 0 ;
+  int res2 ;
+  size_t val3 ;
+  int ecode3 = 0 ;
+  void *argp4 = 0 ;
+  int res4 = 0 ;
+  
+  if ((nobjs < 4) || (nobjs > 4)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_std__vectorT_poly_t_std__allocatorT_poly_t_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "vector_polymorphism_insert" "', argument " "1"" of type '" "std::vector< poly_t > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< poly_t > * >(argp1);
+  res2 = SWIG_ConvertPtr(swig_obj[1], SWIG_as_voidptrptr(&iter2), swig::SwigPyIterator::descriptor(), 0);
+  if (!SWIG_IsOK(res2) || !iter2) {
+    SWIG_exception_fail(SWIG_ArgError(SWIG_TypeError), "in method '" "vector_polymorphism_insert" "', argument " "2"" of type '" "std::vector< poly_t >::iterator""'");
+  } else {
+    swig::SwigPyIterator_T<std::vector< poly_t >::iterator > *iter_t = dynamic_cast<swig::SwigPyIterator_T<std::vector< poly_t >::iterator > *>(iter2);
+    if (iter_t) {
+      arg2 = iter_t->get_current();
+    } else {
+      SWIG_exception_fail(SWIG_ArgError(SWIG_TypeError), "in method '" "vector_polymorphism_insert" "', argument " "2"" of type '" "std::vector< poly_t >::iterator""'");
+    }
+  }
+  ecode3 = SWIG_AsVal_size_t(swig_obj[2], &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "vector_polymorphism_insert" "', argument " "3"" of type '" "std::vector< poly_t >::size_type""'");
+  } 
+  arg3 = static_cast< std::vector< poly_t >::size_type >(val3);
+  res4 = SWIG_ConvertPtr(swig_obj[3], &argp4, SWIGTYPE_p_poly_t,  0  | 0);
+  if (!SWIG_IsOK(res4)) {
+    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "vector_polymorphism_insert" "', argument " "4"" of type '" "std::vector< poly_t >::value_type const &""'"); 
+  }
+  if (!argp4) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "vector_polymorphism_insert" "', argument " "4"" of type '" "std::vector< poly_t >::value_type const &""'"); 
+  }
+  arg4 = reinterpret_cast< std::vector< poly_t >::value_type * >(argp4);
+  (arg1)->insert(arg2,arg3,(std::vector< poly_t >::value_type const &)*arg4);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_vector_polymorphism_insert(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[5];
+  
+  if (!(argc = SWIG_Python_UnpackTuple(args,"vector_polymorphism_insert",0,4,argv))) SWIG_fail;
+  --argc;
+  {
+    unsigned long _index = 0;
+    SWIG_TypeRank _rank = 0; 
+    if (argc == 3) {
+      SWIG_TypeRank _ranki = 0;
+      SWIG_TypeRank _rankm = 0;
+      SWIG_TypeRank _pi = 1;
+      int _v = 0;
+      {
+        int res = swig::asptr(argv[0], (std::vector<poly_t,std::allocator< poly_t > >**)(0));
+        _v = SWIG_CheckState(res);
+      }
+      if (!_v) goto check_1;
+      _ranki += _v*_pi;
+      _rankm += _pi;
+      _pi *= SWIG_MAXCASTRANK;
+      {
+        swig::SwigPyIterator *iter = 0;
+        int res = SWIG_ConvertPtr(argv[1], SWIG_as_voidptrptr(&iter), swig::SwigPyIterator::descriptor(), 0);
+        _v = (SWIG_IsOK(res) && iter && (dynamic_cast<swig::SwigPyIterator_T<std::vector< poly_t >::iterator > *>(iter) != 0));
+      }
+      if (!_v) goto check_1;
+      _ranki += _v*_pi;
+      _rankm += _pi;
+      _pi *= SWIG_MAXCASTRANK;
+      {
+        int res = SWIG_ConvertPtr(argv[2], 0, SWIGTYPE_p_poly_t, 0);
+        _v = SWIG_CheckState(res);
+      }
+      if (!_v) goto check_1;
+      _ranki += _v*_pi;
+      _rankm += _pi;
+      _pi *= SWIG_MAXCASTRANK;
+      if (!_index || (_ranki < _rank)) {
+        _rank = _ranki; _index = 1;
+        if (_rank == _rankm) goto dispatch;
+      }
+    }
+  check_1:
+    
+    if (argc == 4) {
+      SWIG_TypeRank _ranki = 0;
+      SWIG_TypeRank _rankm = 0;
+      SWIG_TypeRank _pi = 1;
+      int _v = 0;
+      {
+        int res = swig::asptr(argv[0], (std::vector<poly_t,std::allocator< poly_t > >**)(0));
+        _v = SWIG_CheckState(res);
+      }
+      if (!_v) goto check_2;
+      _ranki += _v*_pi;
+      _rankm += _pi;
+      _pi *= SWIG_MAXCASTRANK;
+      {
+        swig::SwigPyIterator *iter = 0;
+        int res = SWIG_ConvertPtr(argv[1], SWIG_as_voidptrptr(&iter), swig::SwigPyIterator::descriptor(), 0);
+        _v = (SWIG_IsOK(res) && iter && (dynamic_cast<swig::SwigPyIterator_T<std::vector< poly_t >::iterator > *>(iter) != 0));
+      }
+      if (!_v) goto check_2;
+      _ranki += _v*_pi;
+      _rankm += _pi;
+      _pi *= SWIG_MAXCASTRANK;
+      {
+        {
+          int res = SWIG_AsVal_size_t(argv[2], NULL);
+          _v = SWIG_CheckState(res);
+        }
+      }
+      if (!_v) goto check_2;
+      _ranki += _v*_pi;
+      _rankm += _pi;
+      _pi *= SWIG_MAXCASTRANK;
+      {
+        int res = SWIG_ConvertPtr(argv[3], 0, SWIGTYPE_p_poly_t, 0);
+        _v = SWIG_CheckState(res);
+      }
+      if (!_v) goto check_2;
+      _ranki += _v*_pi;
+      _rankm += _pi;
+      _pi *= SWIG_MAXCASTRANK;
+      if (!_index || (_ranki < _rank)) {
+        _rank = _ranki; _index = 2;
+        if (_rank == _rankm) goto dispatch;
+      }
+    }
+  check_2:
+    
+  dispatch:
+    switch(_index) {
+    case 1:
+      return _wrap_vector_polymorphism_insert__SWIG_0(self, argc, argv);
+    case 2:
+      return _wrap_vector_polymorphism_insert__SWIG_1(self, argc, argv);
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'vector_polymorphism_insert'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    std::vector< poly_t >::insert(std::vector< poly_t >::iterator,std::vector< poly_t >::value_type const &)\n"
+    "    std::vector< poly_t >::insert(std::vector< poly_t >::iterator,std::vector< poly_t >::size_type,std::vector< poly_t >::value_type const &)\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_vector_polymorphism_reserve(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  std::vector< poly_t > *arg1 = (std::vector< poly_t > *) 0 ;
+  std::vector< poly_t >::size_type arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  size_t val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "n", NULL 
+  };
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OO:vector_polymorphism_reserve",kwnames,&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_std__vectorT_poly_t_std__allocatorT_poly_t_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "vector_polymorphism_reserve" "', argument " "1"" of type '" "std::vector< poly_t > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< poly_t > * >(argp1);
+  ecode2 = SWIG_AsVal_size_t(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "vector_polymorphism_reserve" "', argument " "2"" of type '" "std::vector< poly_t >::size_type""'");
+  } 
+  arg2 = static_cast< std::vector< poly_t >::size_type >(val2);
+  (arg1)->reserve(arg2);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_vector_polymorphism_capacity(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< poly_t > *arg1 = (std::vector< poly_t > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  std::vector< poly_t >::size_type result;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_std__vectorT_poly_t_std__allocatorT_poly_t_t_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "vector_polymorphism_capacity" "', argument " "1"" of type '" "std::vector< poly_t > const *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< poly_t > * >(argp1);
+  result = ((std::vector< poly_t > const *)arg1)->capacity();
+  resultobj = SWIG_From_size_t(static_cast< size_t >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_vector_polymorphism(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  std::vector< poly_t > *arg1 = (std::vector< poly_t > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_std__vectorT_poly_t_std__allocatorT_poly_t_t_t, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_vector_polymorphism" "', argument " "1"" of type '" "std::vector< poly_t > *""'"); 
+  }
+  arg1 = reinterpret_cast< std::vector< poly_t > * >(argp1);
+  delete arg1;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *vector_polymorphism_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!SWIG_Python_UnpackTuple(args,(char*)"swigregister", 1, 1,&obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_std__vectorT_poly_t_std__allocatorT_poly_t_t_t, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
+SWIGINTERN PyObject *vector_polymorphism_swiginit(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  return SWIG_Python_InitShadowInstance(args);
+}
+
 SWIGINTERN PyObject *_wrap_index_value_pair_index_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   index_value_pair_t *arg1 = (index_value_pair_t *) 0 ;
@@ -23100,6 +25368,416 @@ SWIGINTERN PyObject *tree_edge_swiginit(PyObject *SWIGUNUSEDPARM(self), PyObject
   return SWIG_Python_InitShadowInstance(args);
 }
 
+SWIGINTERN PyObject *_wrap_polymorphism_birth_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  poly_t *arg1 = (poly_t *) 0 ;
+  int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  PyObject *swig_obj[2] ;
+  
+  if (!SWIG_Python_UnpackTuple(args,"polymorphism_birth_set",2,2,swig_obj)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_poly_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "polymorphism_birth_set" "', argument " "1"" of type '" "poly_t *""'"); 
+  }
+  arg1 = reinterpret_cast< poly_t * >(argp1);
+  ecode2 = SWIG_AsVal_int(swig_obj[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "polymorphism_birth_set" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  if (arg1) (arg1)->birth = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_polymorphism_birth_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  poly_t *arg1 = (poly_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  int result;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_poly_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "polymorphism_birth_get" "', argument " "1"" of type '" "poly_t *""'"); 
+  }
+  arg1 = reinterpret_cast< poly_t * >(argp1);
+  result = (int) ((arg1)->birth);
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_polymorphism_sweep_time_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  poly_t *arg1 = (poly_t *) 0 ;
+  int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  PyObject *swig_obj[2] ;
+  
+  if (!SWIG_Python_UnpackTuple(args,"polymorphism_sweep_time_set",2,2,swig_obj)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_poly_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "polymorphism_sweep_time_set" "', argument " "1"" of type '" "poly_t *""'"); 
+  }
+  arg1 = reinterpret_cast< poly_t * >(argp1);
+  ecode2 = SWIG_AsVal_int(swig_obj[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "polymorphism_sweep_time_set" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  if (arg1) (arg1)->sweep_time = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_polymorphism_sweep_time_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  poly_t *arg1 = (poly_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  int result;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_poly_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "polymorphism_sweep_time_get" "', argument " "1"" of type '" "poly_t *""'"); 
+  }
+  arg1 = reinterpret_cast< poly_t * >(argp1);
+  result = (int) ((arg1)->sweep_time);
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_polymorphism_effect_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  poly_t *arg1 = (poly_t *) 0 ;
+  double arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  PyObject *swig_obj[2] ;
+  
+  if (!SWIG_Python_UnpackTuple(args,"polymorphism_effect_set",2,2,swig_obj)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_poly_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "polymorphism_effect_set" "', argument " "1"" of type '" "poly_t *""'"); 
+  }
+  arg1 = reinterpret_cast< poly_t * >(argp1);
+  ecode2 = SWIG_AsVal_double(swig_obj[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "polymorphism_effect_set" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  if (arg1) (arg1)->effect = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_polymorphism_effect_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  poly_t *arg1 = (poly_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  double result;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_poly_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "polymorphism_effect_get" "', argument " "1"" of type '" "poly_t *""'"); 
+  }
+  arg1 = reinterpret_cast< poly_t * >(argp1);
+  result = (double) ((arg1)->effect);
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_polymorphism_fitness_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  poly_t *arg1 = (poly_t *) 0 ;
+  double arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  PyObject *swig_obj[2] ;
+  
+  if (!SWIG_Python_UnpackTuple(args,"polymorphism_fitness_set",2,2,swig_obj)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_poly_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "polymorphism_fitness_set" "', argument " "1"" of type '" "poly_t *""'"); 
+  }
+  arg1 = reinterpret_cast< poly_t * >(argp1);
+  ecode2 = SWIG_AsVal_double(swig_obj[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "polymorphism_fitness_set" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  if (arg1) (arg1)->fitness = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_polymorphism_fitness_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  poly_t *arg1 = (poly_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  double result;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_poly_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "polymorphism_fitness_get" "', argument " "1"" of type '" "poly_t *""'"); 
+  }
+  arg1 = reinterpret_cast< poly_t * >(argp1);
+  result = (double) ((arg1)->fitness);
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_polymorphism_fitness_variance_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  poly_t *arg1 = (poly_t *) 0 ;
+  double arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  PyObject *swig_obj[2] ;
+  
+  if (!SWIG_Python_UnpackTuple(args,"polymorphism_fitness_variance_set",2,2,swig_obj)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_poly_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "polymorphism_fitness_variance_set" "', argument " "1"" of type '" "poly_t *""'"); 
+  }
+  arg1 = reinterpret_cast< poly_t * >(argp1);
+  ecode2 = SWIG_AsVal_double(swig_obj[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "polymorphism_fitness_variance_set" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  if (arg1) (arg1)->fitness_variance = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_polymorphism_fitness_variance_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  poly_t *arg1 = (poly_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  double result;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_poly_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "polymorphism_fitness_variance_get" "', argument " "1"" of type '" "poly_t *""'"); 
+  }
+  arg1 = reinterpret_cast< poly_t * >(argp1);
+  result = (double) ((arg1)->fitness_variance);
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_polymorphism(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  int arg1 = (int) 0 ;
+  int arg2 = (int) 0 ;
+  double arg3 = (double) 0 ;
+  double arg4 = (double) 0 ;
+  double arg5 = (double) 0 ;
+  int val1 ;
+  int ecode1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  double val4 ;
+  int ecode4 = 0 ;
+  double val5 ;
+  int ecode5 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
+  char *  kwnames[] = {
+    (char *) "b",(char *) "age",(char *) "e",(char *) "f",(char *) "fvar", NULL 
+  };
+  poly_t *result = 0 ;
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"|OOOOO:new_polymorphism",kwnames,&obj0,&obj1,&obj2,&obj3,&obj4)) SWIG_fail;
+  if (obj0) {
+    ecode1 = SWIG_AsVal_int(obj0, &val1);
+    if (!SWIG_IsOK(ecode1)) {
+      SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "new_polymorphism" "', argument " "1"" of type '" "int""'");
+    } 
+    arg1 = static_cast< int >(val1);
+  }
+  if (obj1) {
+    ecode2 = SWIG_AsVal_int(obj1, &val2);
+    if (!SWIG_IsOK(ecode2)) {
+      SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "new_polymorphism" "', argument " "2"" of type '" "int""'");
+    } 
+    arg2 = static_cast< int >(val2);
+  }
+  if (obj2) {
+    ecode3 = SWIG_AsVal_double(obj2, &val3);
+    if (!SWIG_IsOK(ecode3)) {
+      SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "new_polymorphism" "', argument " "3"" of type '" "double""'");
+    } 
+    arg3 = static_cast< double >(val3);
+  }
+  if (obj3) {
+    ecode4 = SWIG_AsVal_double(obj3, &val4);
+    if (!SWIG_IsOK(ecode4)) {
+      SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "new_polymorphism" "', argument " "4"" of type '" "double""'");
+    } 
+    arg4 = static_cast< double >(val4);
+  }
+  if (obj4) {
+    ecode5 = SWIG_AsVal_double(obj4, &val5);
+    if (!SWIG_IsOK(ecode5)) {
+      SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "new_polymorphism" "', argument " "5"" of type '" "double""'");
+    } 
+    arg5 = static_cast< double >(val5);
+  }
+  result = (poly_t *)new poly_t(arg1,arg2,arg3,arg4,arg5);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_poly_t, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_polymorphism___str__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  poly_t *arg1 = (poly_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  char *result = 0 ;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_poly_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "polymorphism___str__" "', argument " "1"" of type '" "poly_t *""'"); 
+  }
+  arg1 = reinterpret_cast< poly_t * >(argp1);
+  result = (char *)poly_t___str__(arg1);
+  resultobj = SWIG_FromCharPtr((const char *)result);
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_polymorphism___repr__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  poly_t *arg1 = (poly_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  char *result = 0 ;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_poly_t, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "polymorphism___repr__" "', argument " "1"" of type '" "poly_t *""'"); 
+  }
+  arg1 = reinterpret_cast< poly_t * >(argp1);
+  result = (char *)poly_t___repr__(arg1);
+  resultobj = SWIG_FromCharPtr((const char *)result);
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_polymorphism(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  poly_t *arg1 = (poly_t *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_poly_t, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_polymorphism" "', argument " "1"" of type '" "poly_t *""'"); 
+  }
+  arg1 = reinterpret_cast< poly_t * >(argp1);
+  delete arg1;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *polymorphism_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!SWIG_Python_UnpackTuple(args,(char*)"swigregister", 1, 1,&obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_poly_t, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
+SWIGINTERN PyObject *polymorphism_swiginit(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  return SWIG_Python_InitShadowInstance(args);
+}
+
 SWIGINTERN PyObject *_wrap_rooted_tree__edges_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   rooted_tree *arg1 = (rooted_tree *) 0 ;
@@ -24019,21 +26697,25 @@ SWIGINTERN PyObject *_wrap_new_haploid_highd(PyObject *SWIGUNUSEDPARM(self), PyO
   int arg1 = (int) 0 ;
   int arg2 = (int) 0 ;
   int arg3 = (int) 1 ;
+  bool arg4 = (bool) false ;
   int val1 ;
   int ecode1 = 0 ;
   int val2 ;
   int ecode2 = 0 ;
   int val3 ;
   int ecode3 = 0 ;
+  bool val4 ;
+  int ecode4 = 0 ;
   PyObject * obj0 = 0 ;
   PyObject * obj1 = 0 ;
   PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
   char *  kwnames[] = {
-    (char *) "L",(char *) "rng_seed",(char *) "number_of_traits", NULL 
+    (char *) "L",(char *) "rng_seed",(char *) "number_of_traits",(char *) "all_polymorphic", NULL 
   };
   haploid_highd *result = 0 ;
   
-  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"|OOO:new_haploid_highd",kwnames,&obj0,&obj1,&obj2)) SWIG_fail;
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"|OOOO:new_haploid_highd",kwnames,&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
   if (obj0) {
     ecode1 = SWIG_AsVal_int(obj0, &val1);
     if (!SWIG_IsOK(ecode1)) {
@@ -24055,9 +26737,16 @@ SWIGINTERN PyObject *_wrap_new_haploid_highd(PyObject *SWIGUNUSEDPARM(self), PyO
     } 
     arg3 = static_cast< int >(val3);
   }
+  if (obj3) {
+    ecode4 = SWIG_AsVal_bool(obj3, &val4);
+    if (!SWIG_IsOK(ecode4)) {
+      SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "new_haploid_highd" "', argument " "4"" of type '" "bool""'");
+    } 
+    arg4 = static_cast< bool >(val4);
+  }
   {
     try {
-      result = (haploid_highd *)new haploid_highd(arg1,arg2,arg3);
+      result = (haploid_highd *)new haploid_highd(arg1,arg2,arg3,arg4);
     } catch (int err) {
       PyErr_SetString(PyExc_ValueError,
         "Construction impossible. Please check input args.");
@@ -24139,58 +26828,6 @@ SWIGINTERN PyObject *_wrap_haploid_highd_carrying_capacity_get(PyObject *SWIGUNU
   arg1 = reinterpret_cast< haploid_highd * >(argp1);
   result = (int) ((arg1)->carrying_capacity);
   resultobj = SWIG_From_int(static_cast< int >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_haploid_highd_mutation_rate_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  haploid_highd *arg1 = (haploid_highd *) 0 ;
-  double arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  double val2 ;
-  int ecode2 = 0 ;
-  PyObject *swig_obj[2] ;
-  
-  if (!SWIG_Python_UnpackTuple(args,"haploid_highd_mutation_rate_set",2,2,swig_obj)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_haploid_highd, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "haploid_highd_mutation_rate_set" "', argument " "1"" of type '" "haploid_highd *""'"); 
-  }
-  arg1 = reinterpret_cast< haploid_highd * >(argp1);
-  ecode2 = SWIG_AsVal_double(swig_obj[1], &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "haploid_highd_mutation_rate_set" "', argument " "2"" of type '" "double""'");
-  } 
-  arg2 = static_cast< double >(val2);
-  if (arg1) (arg1)->mutation_rate = arg2;
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_haploid_highd_mutation_rate_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  haploid_highd *arg1 = (haploid_highd *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject *swig_obj[1] ;
-  double result;
-  
-  if (!args) SWIG_fail;
-  swig_obj[0] = args;
-  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_haploid_highd, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "haploid_highd_mutation_rate_get" "', argument " "1"" of type '" "haploid_highd *""'"); 
-  }
-  arg1 = reinterpret_cast< haploid_highd * >(argp1);
-  result = (double) ((arg1)->mutation_rate);
-  resultobj = SWIG_From_double(static_cast< double >(result));
   return resultobj;
 fail:
   return NULL;
@@ -24301,58 +26938,6 @@ fail:
 }
 
 
-SWIGINTERN PyObject *_wrap_haploid_highd_all_polymorphic_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  haploid_highd *arg1 = (haploid_highd *) 0 ;
-  bool arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  bool val2 ;
-  int ecode2 = 0 ;
-  PyObject *swig_obj[2] ;
-  
-  if (!SWIG_Python_UnpackTuple(args,"haploid_highd_all_polymorphic_set",2,2,swig_obj)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_haploid_highd, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "haploid_highd_all_polymorphic_set" "', argument " "1"" of type '" "haploid_highd *""'"); 
-  }
-  arg1 = reinterpret_cast< haploid_highd * >(argp1);
-  ecode2 = SWIG_AsVal_bool(swig_obj[1], &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "haploid_highd_all_polymorphic_set" "', argument " "2"" of type '" "bool""'");
-  } 
-  arg2 = static_cast< bool >(val2);
-  if (arg1) (arg1)->all_polymorphic = arg2;
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_haploid_highd_all_polymorphic_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  haploid_highd *arg1 = (haploid_highd *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject *swig_obj[1] ;
-  bool result;
-  
-  if (!args) SWIG_fail;
-  swig_obj[0] = args;
-  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_haploid_highd, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "haploid_highd_all_polymorphic_get" "', argument " "1"" of type '" "haploid_highd *""'"); 
-  }
-  arg1 = reinterpret_cast< haploid_highd * >(argp1);
-  result = (bool) ((arg1)->all_polymorphic);
-  resultobj = SWIG_From_bool(static_cast< bool >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
 SWIGINTERN PyObject *_wrap_haploid_highd_recombination_model_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   haploid_highd *arg1 = (haploid_highd *) 0 ;
@@ -24451,6 +27036,131 @@ SWIGINTERN PyObject *_wrap_haploid_highd_circular_get(PyObject *SWIGUNUSEDPARM(s
   arg1 = reinterpret_cast< haploid_highd * >(argp1);
   result = (bool) ((arg1)->circular);
   resultobj = SWIG_From_bool(static_cast< bool >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_haploid_highd__get_mutation_rate(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  haploid_highd *arg1 = (haploid_highd *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  double result;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_haploid_highd, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "haploid_highd__get_mutation_rate" "', argument " "1"" of type '" "haploid_highd *""'"); 
+  }
+  arg1 = reinterpret_cast< haploid_highd * >(argp1);
+  result = (double)(arg1)->get_mutation_rate();
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_haploid_highd__set_mutation_rate(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  haploid_highd *arg1 = (haploid_highd *) 0 ;
+  double arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "m", NULL 
+  };
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OO:haploid_highd__set_mutation_rate",kwnames,&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_haploid_highd, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "haploid_highd__set_mutation_rate" "', argument " "1"" of type '" "haploid_highd *""'"); 
+  }
+  arg1 = reinterpret_cast< haploid_highd * >(argp1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "haploid_highd__set_mutation_rate" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  (arg1)->set_mutation_rate(arg2);
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_haploid_highd__get_polymorphisms(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  haploid_highd *arg1 = (haploid_highd *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  std::vector< poly_t > result;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_haploid_highd, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "haploid_highd__get_polymorphisms" "', argument " "1"" of type '" "haploid_highd *""'"); 
+  }
+  arg1 = reinterpret_cast< haploid_highd * >(argp1);
+  result = (arg1)->get_polymorphisms();
+  resultobj = swig::from(static_cast< std::vector<poly_t,std::allocator< poly_t > > >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_haploid_highd__get_fixed_mutations(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  haploid_highd *arg1 = (haploid_highd *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  std::vector< poly_t > result;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_haploid_highd, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "haploid_highd__get_fixed_mutations" "', argument " "1"" of type '" "haploid_highd *""'"); 
+  }
+  arg1 = reinterpret_cast< haploid_highd * >(argp1);
+  result = (arg1)->get_fixed_mutations();
+  resultobj = swig::from(static_cast< std::vector<poly_t,std::allocator< poly_t > > >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_haploid_highd__get_number_of_mutations(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  haploid_highd *arg1 = (haploid_highd *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  std::vector< int > result;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_haploid_highd, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "haploid_highd__get_number_of_mutations" "', argument " "1"" of type '" "haploid_highd *""'"); 
+  }
+  arg1 = reinterpret_cast< haploid_highd * >(argp1);
+  result = (arg1)->get_number_of_mutations();
+  resultobj = swig::from(static_cast< std::vector<int,std::allocator< int > > >(result));
   return resultobj;
 fail:
   return NULL;
@@ -26198,6 +28908,29 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_haploid_highd_all_polymorphic_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  haploid_highd *arg1 = (haploid_highd *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  bool result;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_haploid_highd, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "haploid_highd_all_polymorphic_get" "', argument " "1"" of type '" "haploid_highd *""'"); 
+  }
+  arg1 = reinterpret_cast< haploid_highd * >(argp1);
+  result = (bool)haploid_highd_all_polymorphic_get(arg1);
+  resultobj = SWIG_From_bool(static_cast< bool >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *_wrap_haploid_highd__set_trait_weights(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
   PyObject *resultobj = 0;
   haploid_highd *arg1 = (haploid_highd *) 0 ;
@@ -26444,6 +29177,53 @@ SWIGINTERN PyObject *_wrap_haploid_highd_get_allele_frequencies(PyObject *SWIGUN
     arg2 = (double*) array_data(array2);
   }
   haploid_highd_get_allele_frequencies(arg1,arg2,arg3);
+  resultobj = SWIG_Py_Void();
+  {
+    resultobj = SWIG_Python_AppendOutput(resultobj,array2);
+  }
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_haploid_highd_get_derived_allele_frequencies(PyObject *SWIGUNUSEDPARM(self), PyObject *args, PyObject *kwargs) {
+  PyObject *resultobj = 0;
+  haploid_highd *arg1 = (haploid_highd *) 0 ;
+  double *arg2 = (double *) 0 ;
+  int arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *array2 = NULL ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  char *  kwnames[] = {
+    (char *) "self",(char *) "ARGOUT_ARRAY1", NULL 
+  };
+  
+  if (!PyArg_ParseTupleAndKeywords(args,kwargs,(char *)"OO:haploid_highd_get_derived_allele_frequencies",kwnames,&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_haploid_highd, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "haploid_highd_get_derived_allele_frequencies" "', argument " "1"" of type '" "haploid_highd *""'"); 
+  }
+  arg1 = reinterpret_cast< haploid_highd * >(argp1);
+  {
+    npy_intp dims[1];
+    if (!PyInt_Check(obj1))
+    {
+      const char* typestring = pytype_string(obj1);
+      PyErr_Format(PyExc_TypeError,
+        "Int dimension expected.  '%s' given.",
+        typestring);
+      SWIG_fail;
+    }
+    arg3 = (int) PyInt_AsLong(obj1);
+    dims[0] = (npy_intp) arg3;
+    array2 = PyArray_SimpleNew(1, dims, NPY_DOUBLE);
+    if (!array2) SWIG_fail;
+    arg2 = (double*) array_data(array2);
+  }
+  haploid_highd_get_derived_allele_frequencies(arg1,arg2,arg3);
   resultobj = SWIG_Py_Void();
   {
     resultobj = SWIG_Python_AppendOutput(resultobj,array2);
@@ -27547,6 +30327,41 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"delete_map_key_node", (PyCFunction)_wrap_delete_map_key_node, METH_O, (char *)"delete_map_key_node(map_key_node self)"},
 	 { (char *)"map_key_node_swigregister", map_key_node_swigregister, METH_VARARGS, NULL},
 	 { (char *)"map_key_node_swiginit", map_key_node_swiginit, METH_VARARGS, NULL},
+	 { (char *)"vector_polymorphism_iterator", (PyCFunction)_wrap_vector_polymorphism_iterator, METH_O, NULL},
+	 { (char *)"vector_polymorphism___nonzero__", (PyCFunction)_wrap_vector_polymorphism___nonzero__, METH_O, NULL},
+	 { (char *)"vector_polymorphism___bool__", (PyCFunction)_wrap_vector_polymorphism___bool__, METH_O, NULL},
+	 { (char *)"vector_polymorphism___len__", (PyCFunction)_wrap_vector_polymorphism___len__, METH_O, NULL},
+	 { (char *)"vector_polymorphism_pop", (PyCFunction)_wrap_vector_polymorphism_pop, METH_O, NULL},
+	 { (char *)"vector_polymorphism___getslice__", (PyCFunction) _wrap_vector_polymorphism___getslice__, METH_VARARGS | METH_KEYWORDS, NULL},
+	 { (char *)"vector_polymorphism___setslice__", (PyCFunction) _wrap_vector_polymorphism___setslice__, METH_VARARGS | METH_KEYWORDS, NULL},
+	 { (char *)"vector_polymorphism___delslice__", (PyCFunction) _wrap_vector_polymorphism___delslice__, METH_VARARGS | METH_KEYWORDS, NULL},
+	 { (char *)"vector_polymorphism___delitem__", _wrap_vector_polymorphism___delitem__, METH_VARARGS, NULL},
+	 { (char *)"vector_polymorphism___getitem__", _wrap_vector_polymorphism___getitem__, METH_VARARGS, NULL},
+	 { (char *)"vector_polymorphism___setitem__", _wrap_vector_polymorphism___setitem__, METH_VARARGS, NULL},
+	 { (char *)"vector_polymorphism_append", (PyCFunction) _wrap_vector_polymorphism_append, METH_VARARGS | METH_KEYWORDS, NULL},
+	 { (char *)"vector_polymorphism_empty", (PyCFunction)_wrap_vector_polymorphism_empty, METH_O, NULL},
+	 { (char *)"vector_polymorphism_size", (PyCFunction)_wrap_vector_polymorphism_size, METH_O, NULL},
+	 { (char *)"vector_polymorphism_clear", (PyCFunction)_wrap_vector_polymorphism_clear, METH_O, NULL},
+	 { (char *)"vector_polymorphism_swap", (PyCFunction) _wrap_vector_polymorphism_swap, METH_VARARGS | METH_KEYWORDS, NULL},
+	 { (char *)"vector_polymorphism_get_allocator", (PyCFunction)_wrap_vector_polymorphism_get_allocator, METH_O, NULL},
+	 { (char *)"vector_polymorphism_begin", (PyCFunction)_wrap_vector_polymorphism_begin, METH_O, NULL},
+	 { (char *)"vector_polymorphism_end", (PyCFunction)_wrap_vector_polymorphism_end, METH_O, NULL},
+	 { (char *)"vector_polymorphism_rbegin", (PyCFunction)_wrap_vector_polymorphism_rbegin, METH_O, NULL},
+	 { (char *)"vector_polymorphism_rend", (PyCFunction)_wrap_vector_polymorphism_rend, METH_O, NULL},
+	 { (char *)"vector_polymorphism_pop_back", (PyCFunction)_wrap_vector_polymorphism_pop_back, METH_O, NULL},
+	 { (char *)"vector_polymorphism_erase", _wrap_vector_polymorphism_erase, METH_VARARGS, NULL},
+	 { (char *)"new_vector_polymorphism", _wrap_new_vector_polymorphism, METH_VARARGS, NULL},
+	 { (char *)"vector_polymorphism_push_back", (PyCFunction) _wrap_vector_polymorphism_push_back, METH_VARARGS | METH_KEYWORDS, NULL},
+	 { (char *)"vector_polymorphism_front", (PyCFunction)_wrap_vector_polymorphism_front, METH_O, NULL},
+	 { (char *)"vector_polymorphism_back", (PyCFunction)_wrap_vector_polymorphism_back, METH_O, NULL},
+	 { (char *)"vector_polymorphism_assign", (PyCFunction) _wrap_vector_polymorphism_assign, METH_VARARGS | METH_KEYWORDS, NULL},
+	 { (char *)"vector_polymorphism_resize", _wrap_vector_polymorphism_resize, METH_VARARGS, NULL},
+	 { (char *)"vector_polymorphism_insert", _wrap_vector_polymorphism_insert, METH_VARARGS, NULL},
+	 { (char *)"vector_polymorphism_reserve", (PyCFunction) _wrap_vector_polymorphism_reserve, METH_VARARGS | METH_KEYWORDS, NULL},
+	 { (char *)"vector_polymorphism_capacity", (PyCFunction)_wrap_vector_polymorphism_capacity, METH_O, NULL},
+	 { (char *)"delete_vector_polymorphism", (PyCFunction)_wrap_delete_vector_polymorphism, METH_O, (char *)"delete_vector_polymorphism(vector_polymorphism self)"},
+	 { (char *)"vector_polymorphism_swigregister", vector_polymorphism_swigregister, METH_VARARGS, NULL},
+	 { (char *)"vector_polymorphism_swiginit", vector_polymorphism_swiginit, METH_VARARGS, NULL},
 	 { (char *)"index_value_pair_index_set", _wrap_index_value_pair_index_set, METH_VARARGS, (char *)"Index"},
 	 { (char *)"index_value_pair_index_get", (PyCFunction)_wrap_index_value_pair_index_get, METH_O, (char *)"Index"},
 	 { (char *)"index_value_pair_val_set", _wrap_index_value_pair_val_set, METH_VARARGS, (char *)"Value"},
@@ -27865,6 +30680,22 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"delete_tree_edge", (PyCFunction)_wrap_delete_tree_edge, METH_O, (char *)"delete_tree_edge(tree_edge self)"},
 	 { (char *)"tree_edge_swigregister", tree_edge_swigregister, METH_VARARGS, NULL},
 	 { (char *)"tree_edge_swiginit", tree_edge_swiginit, METH_VARARGS, NULL},
+	 { (char *)"polymorphism_birth_set", _wrap_polymorphism_birth_set, METH_VARARGS, (char *)"Birth generation"},
+	 { (char *)"polymorphism_birth_get", (PyCFunction)_wrap_polymorphism_birth_get, METH_O, (char *)"Birth generation"},
+	 { (char *)"polymorphism_sweep_time_set", _wrap_polymorphism_sweep_time_set, METH_VARARGS, (char *)"Sweep time [in generations]"},
+	 { (char *)"polymorphism_sweep_time_get", (PyCFunction)_wrap_polymorphism_sweep_time_get, METH_O, (char *)"Sweep time [in generations]"},
+	 { (char *)"polymorphism_effect_set", _wrap_polymorphism_effect_set, METH_VARARGS, (char *)"polymorphism_effect_set(polymorphism self, double effect)"},
+	 { (char *)"polymorphism_effect_get", (PyCFunction)_wrap_polymorphism_effect_get, METH_O, (char *)"polymorphism_effect_get(polymorphism self) -> double"},
+	 { (char *)"polymorphism_fitness_set", _wrap_polymorphism_fitness_set, METH_VARARGS, (char *)"Relative fitness of the clone at birth"},
+	 { (char *)"polymorphism_fitness_get", (PyCFunction)_wrap_polymorphism_fitness_get, METH_O, (char *)"Relative fitness of the clone at birth"},
+	 { (char *)"polymorphism_fitness_variance_set", _wrap_polymorphism_fitness_variance_set, METH_VARARGS, (char *)"Fitness variance of the population at birth"},
+	 { (char *)"polymorphism_fitness_variance_get", (PyCFunction)_wrap_polymorphism_fitness_variance_get, METH_O, (char *)"Fitness variance of the population at birth"},
+	 { (char *)"new_polymorphism", (PyCFunction) _wrap_new_polymorphism, METH_VARARGS | METH_KEYWORDS, (char *)"Polymorphism history"},
+	 { (char *)"polymorphism___str__", (PyCFunction)_wrap_polymorphism___str__, METH_O, (char *)"x.__str__() <==> str(x)"},
+	 { (char *)"polymorphism___repr__", (PyCFunction)_wrap_polymorphism___repr__, METH_O, (char *)"x.__repr__() <==> repr(x)"},
+	 { (char *)"delete_polymorphism", (PyCFunction)_wrap_delete_polymorphism, METH_O, (char *)"delete_polymorphism(polymorphism self)"},
+	 { (char *)"polymorphism_swigregister", polymorphism_swigregister, METH_VARARGS, NULL},
+	 { (char *)"polymorphism_swiginit", polymorphism_swiginit, METH_VARARGS, NULL},
 	 { (char *)"rooted_tree__edges_set", _wrap_rooted_tree__edges_set, METH_VARARGS, (char *)"rooted_tree__edges_set(rooted_tree self, map_key_edge edges)"},
 	 { (char *)"rooted_tree__edges_get", (PyCFunction)_wrap_rooted_tree__edges_get, METH_O, (char *)"rooted_tree__edges_get(rooted_tree self) -> map_key_edge"},
 	 { (char *)"rooted_tree__nodes_set", _wrap_rooted_tree__nodes_set, METH_VARARGS, (char *)"rooted_tree__nodes_set(rooted_tree self, map_key_node nodes)"},
@@ -27964,19 +30795,17 @@ static PyMethodDef SwigMethods[] = {
 		"   - L: number of loci\n"
 		"   - rng_seed: seed for the random generator. If zero (default) pick a random number\n"
 		"   - number_of_traits: number of phenotypic traits, defaults to one\n"
+		"   - all_polymorphic: option to use an infinite-sites model tracking ancestral alleles\n"
+		"                      (only available with a single phenotypic trait and zero mutation rate)\n"
 		"\n"
 		""},
 	 { (char *)"delete_haploid_highd", (PyCFunction)_wrap_delete_haploid_highd, METH_O, (char *)"delete_haploid_highd(haploid_highd self)"},
 	 { (char *)"haploid_highd_carrying_capacity_set", _wrap_haploid_highd_carrying_capacity_set, METH_VARARGS, (char *)"current carrying capacity of the environment"},
 	 { (char *)"haploid_highd_carrying_capacity_get", (PyCFunction)_wrap_haploid_highd_carrying_capacity_get, METH_O, (char *)"current carrying capacity of the environment"},
-	 { (char *)"haploid_highd_mutation_rate_set", _wrap_haploid_highd_mutation_rate_set, METH_VARARGS, (char *)"mutation rate (per site per generation)"},
-	 { (char *)"haploid_highd_mutation_rate_get", (PyCFunction)_wrap_haploid_highd_mutation_rate_get, METH_O, (char *)"mutation rate (per site per generation)"},
 	 { (char *)"haploid_highd_outcrossing_rate_set", _wrap_haploid_highd_outcrossing_rate_set, METH_VARARGS, (char *)"outcrossing rate (probability of sexual reproduction per generation)"},
 	 { (char *)"haploid_highd_outcrossing_rate_get", (PyCFunction)_wrap_haploid_highd_outcrossing_rate_get, METH_O, (char *)"outcrossing rate (probability of sexual reproduction per generation)"},
 	 { (char *)"haploid_highd_crossover_rate_set", _wrap_haploid_highd_crossover_rate_set, METH_VARARGS, (char *)"crossover rate (probability of crossover per site per generation)"},
 	 { (char *)"haploid_highd_crossover_rate_get", (PyCFunction)_wrap_haploid_highd_crossover_rate_get, METH_O, (char *)"crossover rate (probability of crossover per site per generation)"},
-	 { (char *)"haploid_highd_all_polymorphic_set", _wrap_haploid_highd_all_polymorphic_set, METH_VARARGS, (char *)"haploid_highd_all_polymorphic_set(haploid_highd self, bool all_polymorphic)"},
-	 { (char *)"haploid_highd_all_polymorphic_get", (PyCFunction)_wrap_haploid_highd_all_polymorphic_get, METH_O, (char *)"haploid_highd_all_polymorphic_get(haploid_highd self) -> bool"},
 	 { (char *)"haploid_highd_recombination_model_set", _wrap_haploid_highd_recombination_model_set, METH_VARARGS, (char *)"\n"
 		"Model of recombination to use\n"
 		"\n"
@@ -27995,6 +30824,11 @@ static PyMethodDef SwigMethods[] = {
 		""},
 	 { (char *)"haploid_highd_circular_set", _wrap_haploid_highd_circular_set, METH_VARARGS, (char *)"is the genome circular?"},
 	 { (char *)"haploid_highd_circular_get", (PyCFunction)_wrap_haploid_highd_circular_get, METH_O, (char *)"is the genome circular?"},
+	 { (char *)"haploid_highd__get_mutation_rate", (PyCFunction)_wrap_haploid_highd__get_mutation_rate, METH_O, (char *)"haploid_highd__get_mutation_rate(haploid_highd self) -> double"},
+	 { (char *)"haploid_highd__set_mutation_rate", (PyCFunction) _wrap_haploid_highd__set_mutation_rate, METH_VARARGS | METH_KEYWORDS, (char *)"haploid_highd__set_mutation_rate(haploid_highd self, double m)"},
+	 { (char *)"haploid_highd__get_polymorphisms", (PyCFunction)_wrap_haploid_highd__get_polymorphisms, METH_O, (char *)"haploid_highd__get_polymorphisms(haploid_highd self) -> vector_polymorphism"},
+	 { (char *)"haploid_highd__get_fixed_mutations", (PyCFunction)_wrap_haploid_highd__get_fixed_mutations, METH_O, (char *)"haploid_highd__get_fixed_mutations(haploid_highd self) -> vector_polymorphism"},
+	 { (char *)"haploid_highd__get_number_of_mutations", (PyCFunction)_wrap_haploid_highd__get_number_of_mutations, METH_O, (char *)"haploid_highd__get_number_of_mutations(haploid_highd self) -> _intVector"},
 	 { (char *)"haploid_highd_set_allele_frequencies", (PyCFunction) _wrap_haploid_highd_set_allele_frequencies, METH_VARARGS | METH_KEYWORDS, (char *)"\n"
 		"Initialize the population according to the given allele frequencies in linkage equilibrium.\n"
 		"\n"
@@ -28306,6 +31140,7 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"haploid_highd_number_of_traits_get", (PyCFunction)_wrap_haploid_highd_number_of_traits_get, METH_O, (char *)"Number of traits (read-only)"},
 	 { (char *)"haploid_highd_max_fitness_get", (PyCFunction)_wrap_haploid_highd_max_fitness_get, METH_O, (char *)"Maximal fitness in the population (read-only)"},
 	 { (char *)"haploid_highd_participation_ratio_get", (PyCFunction)_wrap_haploid_highd_participation_ratio_get, METH_O, (char *)"Participation ratio (read-only)"},
+	 { (char *)"haploid_highd_all_polymorphic_get", (PyCFunction)_wrap_haploid_highd_all_polymorphic_get, METH_O, (char *)"All polymorphic? (read-only)"},
 	 { (char *)"haploid_highd__set_trait_weights", (PyCFunction) _wrap_haploid_highd__set_trait_weights, METH_VARARGS | METH_KEYWORDS, (char *)"haploid_highd__set_trait_weights(haploid_highd self, double * IN_ARRAY1)"},
 	 { (char *)"haploid_highd__get_trait_weights", (PyCFunction) _wrap_haploid_highd__get_trait_weights, METH_VARARGS | METH_KEYWORDS, (char *)"\n"
 		"weight of each trait on fitness\n"
@@ -28336,6 +31171,7 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		""},
 	 { (char *)"haploid_highd_get_allele_frequencies", (PyCFunction) _wrap_haploid_highd_get_allele_frequencies, METH_VARARGS | METH_KEYWORDS, (char *)"Get all allele frequencies"},
+	 { (char *)"haploid_highd_get_derived_allele_frequencies", (PyCFunction) _wrap_haploid_highd_get_derived_allele_frequencies, METH_VARARGS | METH_KEYWORDS, (char *)"Get all derived allele frequencies"},
 	 { (char *)"haploid_highd_get_trait_additive", (PyCFunction) _wrap_haploid_highd_get_trait_additive, METH_VARARGS | METH_KEYWORDS, (char *)"\n"
 		"Get an array with the additive coefficients of all loci of a trait. \n"
 		"\n"
@@ -28459,10 +31295,12 @@ static swig_type_info _swigt__p_multi_locus_genealogy = {"_p_multi_locus_genealo
 static swig_type_info _swigt__p_node_t = {"_p_node_t", "std::map< tree_key_t,node_t >::mapped_type *|node_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_ostream = {"_p_ostream", "ostream *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_p_PyObject = {"_p_p_PyObject", "PyObject **", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_poly_t = {"_p_poly_t", "std::vector< poly_t >::value_type *|poly_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_rooted_tree = {"_p_rooted_tree", "rooted_tree *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_size_type = {"_p_size_type", "size_type *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_stat_t = {"_p_stat_t", "stat_t *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__allocatorT_int_t = {"_p_std__allocatorT_int_t", "std::vector< int >::allocator_type *|std::allocator< int > *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_std__allocatorT_poly_t_t = {"_p_std__allocatorT_poly_t_t", "std::vector< poly_t >::allocator_type *|std::allocator< poly_t > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__allocatorT_std__pairT_tree_key_t_const_edge_t_t_t = {"_p_std__allocatorT_std__pairT_tree_key_t_const_edge_t_t_t", "std::map< tree_key_t,edge_t >::allocator_type *|std::allocator< std::pair< tree_key_t const,edge_t > > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__allocatorT_std__pairT_tree_key_t_const_node_t_t_t = {"_p_std__allocatorT_std__pairT_tree_key_t_const_node_t_t_t", "std::map< tree_key_t,node_t >::allocator_type *|std::allocator< std::pair< tree_key_t const,node_t > > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__allocatorT_step_t_t = {"_p_std__allocatorT_step_t_t", "std::vector< step_t >::allocator_type *|std::allocator< step_t > *", 0, 0, (void*)0, 0};
@@ -28473,6 +31311,7 @@ static swig_type_info _swigt__p_std__listT_tree_key_t_std__allocatorT_tree_key_t
 static swig_type_info _swigt__p_std__mapT_tree_key_t_edge_t_std__lessT_tree_key_t_t_std__allocatorT_std__pairT_tree_key_t_const_edge_t_t_t_t = {"_p_std__mapT_tree_key_t_edge_t_std__lessT_tree_key_t_t_std__allocatorT_std__pairT_tree_key_t_const_edge_t_t_t_t", "std::map< tree_key_t,edge_t,std::less< tree_key_t >,std::allocator< std::pair< tree_key_t const,edge_t > > > *|std::map< tree_key_t,edge_t > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__mapT_tree_key_t_node_t_std__lessT_tree_key_t_t_std__allocatorT_std__pairT_tree_key_t_const_node_t_t_t_t = {"_p_std__mapT_tree_key_t_node_t_std__lessT_tree_key_t_t_std__allocatorT_std__pairT_tree_key_t_const_node_t_t_t_t", "std::map< tree_key_t,node_t,std::less< tree_key_t >,std::allocator< std::pair< tree_key_t const,node_t > > > *|std::map< tree_key_t,node_t > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__vectorT_int_std__allocatorT_int_t_t = {"_p_std__vectorT_int_std__allocatorT_int_t_t", "std::vector< int,std::allocator< int > > *|std::vector< int > *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_std__vectorT_poly_t_std__allocatorT_poly_t_t_t = {"_p_std__vectorT_poly_t_std__allocatorT_poly_t_t_t", "std::vector< poly_t,std::allocator< poly_t > > *|std::vector< poly_t > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__vectorT_step_t_std__allocatorT_step_t_t_t = {"_p_std__vectorT_step_t_std__allocatorT_step_t_t_t", "std::vector< step_t,std::allocator< step_t > > *|std::vector< step_t > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__vectorT_tree_key_t_std__allocatorT_tree_key_t_t_t = {"_p_std__vectorT_tree_key_t_std__allocatorT_tree_key_t_t_t", "std::vector< tree_key_t > *|std::vector< tree_key_t,std::allocator< tree_key_t > > *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_step_t = {"_p_step_t", "std::vector< step_t >::value_type *|step_t *", 0, 0, (void*)0, 0};
@@ -28501,10 +31340,12 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_node_t,
   &_swigt__p_ostream,
   &_swigt__p_p_PyObject,
+  &_swigt__p_poly_t,
   &_swigt__p_rooted_tree,
   &_swigt__p_size_type,
   &_swigt__p_stat_t,
   &_swigt__p_std__allocatorT_int_t,
+  &_swigt__p_std__allocatorT_poly_t_t,
   &_swigt__p_std__allocatorT_std__pairT_tree_key_t_const_edge_t_t_t,
   &_swigt__p_std__allocatorT_std__pairT_tree_key_t_const_node_t_t_t,
   &_swigt__p_std__allocatorT_step_t_t,
@@ -28515,6 +31356,7 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_std__mapT_tree_key_t_edge_t_std__lessT_tree_key_t_t_std__allocatorT_std__pairT_tree_key_t_const_edge_t_t_t_t,
   &_swigt__p_std__mapT_tree_key_t_node_t_std__lessT_tree_key_t_t_std__allocatorT_std__pairT_tree_key_t_const_node_t_t_t_t,
   &_swigt__p_std__vectorT_int_std__allocatorT_int_t_t,
+  &_swigt__p_std__vectorT_poly_t_std__allocatorT_poly_t_t_t,
   &_swigt__p_std__vectorT_step_t_std__allocatorT_step_t_t_t,
   &_swigt__p_std__vectorT_tree_key_t_std__allocatorT_tree_key_t_t_t,
   &_swigt__p_step_t,
@@ -28543,10 +31385,12 @@ static swig_cast_info _swigc__p_multi_locus_genealogy[] = {  {&_swigt__p_multi_l
 static swig_cast_info _swigc__p_node_t[] = {  {&_swigt__p_node_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_ostream[] = {  {&_swigt__p_ostream, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_p_PyObject[] = {  {&_swigt__p_p_PyObject, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_poly_t[] = {  {&_swigt__p_poly_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_rooted_tree[] = {  {&_swigt__p_rooted_tree, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_size_type[] = {  {&_swigt__p_size_type, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_stat_t[] = {  {&_swigt__p_stat_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__allocatorT_int_t[] = {  {&_swigt__p_std__allocatorT_int_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_std__allocatorT_poly_t_t[] = {  {&_swigt__p_std__allocatorT_poly_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__allocatorT_std__pairT_tree_key_t_const_edge_t_t_t[] = {  {&_swigt__p_std__allocatorT_std__pairT_tree_key_t_const_edge_t_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__allocatorT_std__pairT_tree_key_t_const_node_t_t_t[] = {  {&_swigt__p_std__allocatorT_std__pairT_tree_key_t_const_node_t_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__allocatorT_step_t_t[] = {  {&_swigt__p_std__allocatorT_step_t_t, 0, 0, 0},{0, 0, 0, 0}};
@@ -28557,6 +31401,7 @@ static swig_cast_info _swigc__p_std__listT_tree_key_t_std__allocatorT_tree_key_t
 static swig_cast_info _swigc__p_std__mapT_tree_key_t_edge_t_std__lessT_tree_key_t_t_std__allocatorT_std__pairT_tree_key_t_const_edge_t_t_t_t[] = {  {&_swigt__p_std__mapT_tree_key_t_edge_t_std__lessT_tree_key_t_t_std__allocatorT_std__pairT_tree_key_t_const_edge_t_t_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__mapT_tree_key_t_node_t_std__lessT_tree_key_t_t_std__allocatorT_std__pairT_tree_key_t_const_node_t_t_t_t[] = {  {&_swigt__p_std__mapT_tree_key_t_node_t_std__lessT_tree_key_t_t_std__allocatorT_std__pairT_tree_key_t_const_node_t_t_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__vectorT_int_std__allocatorT_int_t_t[] = {  {&_swigt__p_std__vectorT_int_std__allocatorT_int_t_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_std__vectorT_poly_t_std__allocatorT_poly_t_t_t[] = {  {&_swigt__p_std__vectorT_poly_t_std__allocatorT_poly_t_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__vectorT_step_t_std__allocatorT_step_t_t_t[] = {  {&_swigt__p_std__vectorT_step_t_std__allocatorT_step_t_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__vectorT_tree_key_t_std__allocatorT_tree_key_t_t_t[] = {  {&_swigt__p_std__vectorT_tree_key_t_std__allocatorT_tree_key_t_t_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_step_t[] = {  {&_swigt__p_step_t, 0, 0, 0},{0, 0, 0, 0}};
@@ -28585,10 +31430,12 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_node_t,
   _swigc__p_ostream,
   _swigc__p_p_PyObject,
+  _swigc__p_poly_t,
   _swigc__p_rooted_tree,
   _swigc__p_size_type,
   _swigc__p_stat_t,
   _swigc__p_std__allocatorT_int_t,
+  _swigc__p_std__allocatorT_poly_t_t,
   _swigc__p_std__allocatorT_std__pairT_tree_key_t_const_edge_t_t_t,
   _swigc__p_std__allocatorT_std__pairT_tree_key_t_const_node_t_t_t,
   _swigc__p_std__allocatorT_step_t_t,
@@ -28599,6 +31446,7 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_std__mapT_tree_key_t_edge_t_std__lessT_tree_key_t_t_std__allocatorT_std__pairT_tree_key_t_const_edge_t_t_t_t,
   _swigc__p_std__mapT_tree_key_t_node_t_std__lessT_tree_key_t_t_std__allocatorT_std__pairT_tree_key_t_const_node_t_t_t_t,
   _swigc__p_std__vectorT_int_std__allocatorT_int_t_t,
+  _swigc__p_std__vectorT_poly_t_std__allocatorT_poly_t_t_t,
   _swigc__p_std__vectorT_step_t_std__allocatorT_step_t_t_t,
   _swigc__p_std__vectorT_tree_key_t_std__allocatorT_tree_key_t_t_t,
   _swigc__p_step_t,

@@ -5,7 +5,7 @@
  * @version 
  * @date 2012-04-19
  *
- * Copyright (c) 2012, Richard Neher, Fabio Zanini
+ * Copyright (c) 2012-2013, Richard Neher, Fabio Zanini
  * All rights reserved.
  *
  * This file is part of FFPopSim.
@@ -278,6 +278,16 @@ struct edge_t {
 	int number_of_offspring;
 };
 
+struct poly_t {
+	int birth;
+	int sweep_time;
+	double effect;
+	double fitness;
+	double fitness_variance;
+	poly_t(int b=0, int age=0, double e=0, double f=0, double fvar=0) :
+                birth(b), sweep_time(age), effect(e), fitness(f), fitness_variance(fvar) {};
+};
+
 
 class rooted_tree {
 public:
@@ -345,7 +355,7 @@ public:
 	virtual ~multi_locus_genealogy();
 	void track_locus(int new_locus);
 	void reset(){loci.clear(); trees.clear();newGenerations.clear();}
-	void reset_but_loci(){for(int i=0; i<loci.size(); i++){trees[i].reset();newGenerations[i].clear();}}
+	void reset_but_loci(){for(unsigned int i=0; i<loci.size(); i++){trees[i].reset();newGenerations[i].clear();}}
 	void add_generation(double baseline);
 	int extend_storage(int n);
 };
@@ -371,7 +381,7 @@ public:
 	hypercube_highd *trait;
 
 	// construction / destruction
-	haploid_highd(int L=0, int rng_seed=0, int number_of_traits=1);
+	haploid_highd(int L=0, int rng_seed=0, int number_of_traits=1, bool all_polymorphic=false);
 	virtual ~haploid_highd();
 
         // the population
@@ -379,12 +389,24 @@ public:
 
 	// population parameters (read/write)
 	int carrying_capacity;			// carrying capacity of the environment (pop size)
-	double mutation_rate;			// rate of mutation per locus per generation
 	double outcrossing_rate;		// probability of having sex
 	double crossover_rate;			// rate of crossover during sex
-	bool all_polymorphic;			// switch that makes sure every locus is polymorphic in an infinite alleles model when mutation rate is 0
 	int recombination_model;		//model of recombination to be used
 	bool circular;				//topology of the chromosome
+
+        // mutation rate (only if not all_polymorphic)
+        double get_mutation_rate(){return mutation_rate;}
+        void set_mutation_rate(double m){
+        if(all_polymorphic){
+                if(HP_VERBOSE) cerr<<"Cannot set the mutation rate with all_polymorphic."<<endl;
+                throw HP_BADARG;
+        } else mutation_rate=m;}
+
+        // pseudo-infinite site model
+        bool is_all_polymorphic(){return all_polymorphic;}
+        vector<poly_t> get_polymorphisms(){return polymorphism;}
+        vector<poly_t> get_fixed_mutations(){return fixed_mutations;}
+        vector<int> get_number_of_mutations(){return number_of_mutations;}
 
 	// population parameters (read only)
 	int L(){return number_of_loci;}
@@ -395,7 +417,7 @@ public:
 	void set_generation(int g){generation = g;}
 	int get_number_of_clones(){return number_of_clones;}
 	int get_number_of_traits(){return number_of_traits;}
-	double get_participation_ratio(){return participation_ratio;};
+	double get_participation_ratio(){return participation_ratio;}
 
 	// initialization
 	int set_allele_frequencies(double* frequencies, unsigned long N);
@@ -445,7 +467,7 @@ public:
 
 	// allele frequencies
 	double get_allele_frequency(int l) {if (!allele_frequencies_up_to_date){calc_allele_freqs();} return allele_frequencies[l];}
-	double get_derived_allele_frequency(int l) {if (ancestral_state[l]) {return get_allele_frequency(l);} else {return 1.0-get_allele_frequency(l);}}
+	double get_derived_allele_frequency(int l) {if (ancestral_state[l]) {return 1.0-get_allele_frequency(l);} else {return get_allele_frequency(l);}}
 
 	double get_pair_frequency(int locus1, int locus2);
 	vector <double> get_pair_frequencies(vector < vector <int> > *loci);
@@ -479,6 +501,7 @@ public:
 	int read_ms_sample(istream &gts, int skip_locus, int multiplicity);
 	int read_ms_sample_sparse(istream &gts, int skip_locus, int multiplicity, int distance);
 
+        // genealogy
 	multi_locus_genealogy genealogy;
 
 protected:
@@ -494,9 +517,9 @@ protected:
 	int number_of_loci;
 	int population_size;
 	int number_of_traits;
-
 	int generation;
 	int number_of_clones;
+	double mutation_rate;			// rate of mutation per locus per generation
 
 	// evolution
 	int mutate();
@@ -520,8 +543,11 @@ protected:
 	double *gamete_allele_frequencies;
 	double *chi1;				//symmetric allele frequencies
 	double **chi2;				//symmetric two locus correlations
+	bool all_polymorphic;                   // switch that makes sure every locus is polymorphic in an infinite alleles model when mutation rate is 0
 	vector <int> ancestral_state;	//vector, that for each locus keeps track of the ancestral state. by default, all zero
-	vector <int> birth_of_allele;	//vector, that keeps track when an allele was introduced. Only needed in an infinite alleles model
+	vector <poly_t> polymorphism;	//vector, that keeps track when an allele was introduced on which background. Only needed in an infinite alleles model
+	vector <poly_t> fixed_mutations;	//vector to store all fixed mutations
+	vector <int> number_of_mutations;	//vector to store the number of mutations introduced each generation
 	void calc_allele_freqs();
 
 	// recombination details

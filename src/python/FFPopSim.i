@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2012, Richard Neher, Fabio Zanini
+ * Copyright (c) 2012-2013, Richard Neher, Fabio Zanini
  * All rights reserved.
  *
  * This file is part of FFPopSim.
@@ -86,6 +86,7 @@ import_array();
 %template(list_tree_key) std::list<tree_key_t>;
 %template(map_key_edge) std::map<tree_key_t, edge_t>;
 %template(map_key_node) std::map<tree_key_t, node_t>;
+%template(vector_polymorphism) std::vector<poly_t>;
 
 /* FFPopSim typemaps */
 %include "ffpopsim_typemaps.i";
